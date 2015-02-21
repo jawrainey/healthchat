@@ -1,4 +1,5 @@
 .ropeproject/
 *.swp
+*.pyc
 notes.md
 scratch.md
