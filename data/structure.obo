@@ -1,0 +1,84 @@
+format-version: 1.2
+date: 20:02:2015 16:20
+saved-by: jawrainey
+auto-generated-by: OBO-Edit 2.3.1
+default-namespace: file:/Users/jawrainey/Dropbox/uni/04/CM3203/project/data/structure.obo
+
+[Term]
+id: ID:1
+name: health
+
+[Term]
+id: ID:2
+name: diet
+is_a: ID:1 ! health
+
+[Term]
+id: ID:3
+name: beverages
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:4
+name: dairy
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:5
+name: fruit
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:6
+name: grains
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:7
+name: meat
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:8
+name: seafood
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:9
+name: vegetable
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:10
+name: exercise
+is_a: ID:1 ! health
+
+[Term]
+id: ID:11
+name: endurance
+is_a: ID:10 ! exercise
+
+[Term]
+id: ID:12
+name: weight-lifting
+is_a: ID:11 ! endurance
+
+[Term]
+id: ID:13
+name: cardio
+is_a: ID:10 ! exercise
+
+[Term]
+id: ID:14
+name: swimming
+is_a: ID:13 ! cardio
+
+[Term]
+id: ID:15
+name: running
+is_a: ID:13 ! cardio
+
+[Term]
+id: ID:16
+name: cycling
+is_a: ID:13 ! cardio
