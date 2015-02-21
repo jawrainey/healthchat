@@ -28,7 +28,7 @@ if __name__ == "__main__":
     obo_content = [i for i in obo.Parser(obo_file)]
 
     all_concepts = [str(i.tags['name'][0]) for i in obo_content]
-    core_concepts = all_concepts[0:16]  # Only display core concepts to user.
+    core_concepts = all_concepts[2:18]  # Only display core concepts to user.
 
     # The term to insert into the OBO file later.
     term = ('\n[Term]\n'
@@ -49,7 +49,8 @@ if __name__ == "__main__":
                 last_id += 1
                 concept = raw_input('Select a concept for %s from:\n%s\n'
                                     % (word, ', '.join(core_concepts)))
-                is_a_id = get_concept_id(obo_content, concept)
-                f.write(term % (last_id, word, is_a_id, concept))
+                if 'skip' not in concept:
+                    is_a_id = get_concept_id(obo_content, concept)
+                    f.write(term % (last_id, word, is_a_id, concept))
             else:
                 print ('%s already exists in ontology.' % word)
