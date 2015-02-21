@@ -55,35 +55,40 @@ is_a: ID:2 ! diet
 
 [Term]
 id: ID:11
+name: spices
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:12
 name: exercise
 is_a: ID:1 ! health
 
 [Term]
-id: ID:12
-name: endurance
-is_a: ID:11 ! exercise
-
-[Term]
 id: ID:13
-name: weight-lifting
-is_a: ID:12 ! endurance
+name: endurance
+is_a: ID:12 ! exercise
 
 [Term]
 id: ID:14
-name: cardio
-is_a: ID:11 ! exercise
+name: weight-lifting
+is_a: ID:13 ! endurance
 
 [Term]
 id: ID:15
-name: swimming
-is_a: ID:14 ! cardio
+name: cardio
+is_a: ID:12 ! exercise
 
 [Term]
 id: ID:16
-name: running
-is_a: ID:14 ! cardio
+name: swimming
+is_a: ID:15 ! cardio
 
 [Term]
 id: ID:17
+name: running
+is_a: ID:15 ! cardio
+
+[Term]
+id: ID:18
 name: cycling
-is_a: ID:14 ! cardio
+is_a: ID:15 ! cardio
