@@ -92,3 +92,1173 @@ is_a: ID:15 ! cardio
 id: ID:18
 name: cycling
 is_a: ID:15 ! cardio
+
+[Term]
+id: ID:19
+name: ale
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:20
+name: almond
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:21
+name: andouille
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:22
+name: apple
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:23
+name: arborio
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:24
+name: artichoke
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:25
+name: asparagus
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:26
+name: avocado
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:27
+name: bacon
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:28
+name: bagel
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:29
+name: banana
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:30
+name: barley
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:31
+name: basil
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:32
+name: bay leaves
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:33
+name: bean
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:34
+name: beef
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:35
+name: beer
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:36
+name: beet
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:37
+name: biscuit
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:38
+name: blueberry
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:39
+name: brandy
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:40
+name: bread
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:41
+name: brie
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:42
+name: brioche
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:43
+name: broccoli
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:44
+name: bruschetta
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:45
+name: brussel
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:46
+name: burger
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:47
+name: deserts
+is_a: ID:2 ! diet
+
+[Term]
+id: ID:48
+name: butter
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:49
+name: buttermilk
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:50
+name: cabbage
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:51
+name: cake
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:52
+name: caprese
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:53
+name: carnita
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:54
+name: carrot
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:55
+name: cashew
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:56
+name: casserole
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:57
+name: cauliflower
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:58
+name: celery
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:59
+name: cereal
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:60
+name: champagne
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:61
+name: cheddar
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:62
+name: cheese
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:63
+name: cheesecake
+is_a: ID:51 ! cake
+
+[Term]
+id: ID:64
+name: cheetos
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:65
+name: cherry
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:66
+name: chestnut
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:67
+name: chicken
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:68
+name: chickpea
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:69
+name: chilli
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:70
+name: chive
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:71
+name: chocolate
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:72
+name: chowder
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:73
+name: cider
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:74
+name: cinnamon
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:75
+name: citrus
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:76
+name: cloves
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:77
+name: cocoa
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:78
+name: coconut
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:79
+name: coffee
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:80
+name: cognac
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:81
+name: cola
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:82
+name: cookie
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:83
+name: coriander
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:84
+name: corn
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:85
+name: cornstarch
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:86
+name: cottage
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:87
+name: couscous
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:88
+name: crab
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:89
+name: cracker
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:90
+name: cranberry
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:91
+name: crawfish
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:92
+name: croutons
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:93
+name: crustaceans
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:94
+name: cucumber
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:95
+name: cumin
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:96
+name: cupcake
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:97
+name: daikon
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:98
+name: dal
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:99
+name: date
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:100
+name: duck
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:101
+name: edamame
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:102
+name: egg
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:103
+name: eggplant
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:104
+name: enchilada
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:105
+name: espresso
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:106
+name: feta
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:107
+name: fishcake
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:108
+name: flour
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:109
+name: foie
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:110
+name: fondue
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:111
+name: garlic
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:112
+name: ghee
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:113
+name: ginger
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:114
+name: goat
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:115
+name: gorgonzola
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:116
+name: granola
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:117
+name: grape
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:118
+name: gruyere
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:119
+name: guacamole
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:120
+name: habanero
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:121
+name: haloumi
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:122
+name: ham
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:123
+name: hazelnut
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:124
+name: honey
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:125
+name: hummus
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:126
+name: jalapeno
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:127
+name: jelly
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:128
+name: jicama
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:129
+name: juice
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:130
+name: kale
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:131
+name: kidney
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:132
+name: kiwi
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:133
+name: lamb
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:134
+name: lasagna
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:135
+name: leek
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:136
+name: legume
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:137
+name: lemon
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:138
+name: lentils
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:139
+name: lettuce
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:140
+name: lime
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:141
+name: liver
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:142
+name: lobster
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:143
+name: long beans
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:144
+name: macaroni
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:145
+name: malbec
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:146
+name: marmalade
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:147
+name: marnier
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:148
+name: meatball
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:149
+name: meatloaf
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:150
+name: melon
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:151
+name: merlot
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:152
+name: milk
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:153
+name: mint
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:154
+name: miso
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:155
+name: mousse
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:156
+name: mozzarella
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:158
+name: mussel
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:159
+name: mustard
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:160
+name: naan
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:161
+name: nacho
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:164
+name: nutella
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:165
+name: oatmeal
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:166
+name: okra
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:167
+name: olive
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:168
+name: omelette
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:169
+name: onion
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:170
+name: orange
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:171
+name: oregano
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:172
+name: oreo
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:173
+name: orzo
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:174
+name: oyster
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:176
+name: pancetta
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:178
+name: papaya
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:179
+name: paprika
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:180
+name: parmesan
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:181
+name: parsley
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:182
+name: parsnip
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:183
+name: pasta
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:184
+name: pastrami
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:185
+name: peach
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:186
+name: peanut
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:187
+name: pear
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:188
+name: peas
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:189
+name: pecan
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:190
+name: pepper
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:192
+name: pepperami
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:193
+name: peppercorn
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:194
+name: pepperoni
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:195
+name: pepsi
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:196
+name: pesto
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:198
+name: pickle
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:201
+name: pineapple
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:202
+name: pinot
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:203
+name: pita
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:205
+name: polenta
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:206
+name: pomegranate
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:215
+name: popcorn
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:216
+name: pork
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:217
+name: porridge
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:218
+name: potato
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:219
+name: powerade
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:220
+name: pretzel
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:221
+name: prosciutto
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:222
+name: prosecco
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:223
+name: pudding
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:224
+name: pumpkin
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:225
+name: rabbit
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:226
+name: raisin
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:227
+name: raspberry
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:228
+name: rice
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:229
+name: rosemary
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:230
+name: sage
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:231
+name: salami
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:232
+name: salmon
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:233
+name: scallion
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:234
+name: scallop
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:235
+name: shallot
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:236
+name: sherry
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:237
+name: shrimp
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:238
+name: soy
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:239
+name: soybean
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:240
+name: soylent
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:241
+name: sprouts
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:242
+name: squash
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:243
+name: steak
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:244
+name: stout
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:245
+name: strawberry
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:246
+name: sushi
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:250
+name: tapenade
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:251
+name: tarragon
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:252
+name: tart
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:253
+name: tartare
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:254
+name: tea
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:255
+name: thyme
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:257
+name: tofu
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:258
+name: tomato
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:259
+name: tortilla
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:260
+name: trout
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:261
+name: truffle
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:262
+name: tuna
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:263
+name: turkey
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:264
+name: turnip
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:265
+name: vanilla
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:266
+name: vodka
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:267
+name: walnut
+is_a: ID:7 ! nuts
+
+[Term]
+id: ID:268
+name: water
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:269
+name: wheat
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:270
+name: whey
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:271
+name: wholemeal
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:272
+name: yam
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:273
+name: yoghurt
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:274
+name: yolk
+is_a: ID:4 ! dairy
