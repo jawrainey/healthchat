@@ -1262,3 +1262,548 @@ is_a: ID:4 ! dairy
 id: ID:274
 name: yolk
 is_a: ID:4 ! dairy
+
+[Term]
+id: ID:275
+name: abs
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:276
+name: achilles
+is_a: ID:17 ! running
+
+[Term]
+id: ID:277
+name: adrenaline
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:278
+name: aerobic
+is_a: ID:17 ! running
+
+[Term]
+id: ID:279
+name: aesthetic
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:280
+name: anaerobic
+is_a: ID:17 ! running
+
+[Term]
+id: ID:281
+name: ankle
+is_a: ID:17 ! running
+
+[Term]
+id: ID:282
+name: arch
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:283
+name: arm
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:284
+name: athlete
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:285
+name: athletic
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:286
+name: back
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:287
+name: backstroke
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:288
+name: bar
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:289
+name: barbell
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:290
+name: barefoot
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:291
+name: belt
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:292
+name: bench
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:293
+name: bicep
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:294
+name: bicycle
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:295
+name: bicycling
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:296
+name: bicyclist
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:297
+name: bike
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:298
+name: bodybuilder
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:299
+name: bodybuilding
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:301
+name: breaststroke
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:302
+name: breath
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:303
+name: bulk
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:304
+name: butterfly
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:305
+name: calves
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:306
+name: chalk
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:307
+name: chest
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:308
+name: chin
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:309
+name: compound
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:310
+name: cooldown
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:311
+name: creatine
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:312
+name: deadlift
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:313
+name: decline
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:314
+name: deltoid
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:315
+name: delts
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:316
+name: dips
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:317
+name: diving
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:318
+name: downward
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:319
+name: dumbbell
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:320
+name: elbow
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:321
+name: elliptical
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:322
+name: forearm
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:323
+name: frame
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:324
+name: freestyle
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:325
+name: front crawl
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:326
+name: gear
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:327
+name: grip
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:330
+name: hams
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:332
+name: hike
+is_a: ID:17 ! running
+
+[Term]
+id: ID:333
+name: hill
+is_a: ID:17 ! running
+
+[Term]
+id: ID:335
+name: hurdle
+is_a: ID:17 ! running
+
+[Term]
+id: ID:337
+name: incline
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:338
+name: intervals
+is_a: ID:17 ! running
+
+[Term]
+id: ID:339
+name: jog
+is_a: ID:17 ! running
+
+[Term]
+id: ID:340
+name: kettlebell
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:342
+name: lap
+is_a: ID:17 ! running
+
+[Term]
+id: ID:343
+name: leg extension
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:345
+name: lift
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:346
+name: lung
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:347
+name: lunge
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:348
+name: marathon
+is_a: ID:17 ! running
+
+[Term]
+id: ID:349
+name: mile
+is_a: ID:17 ! running
+
+[Term]
+id: ID:350
+name: overexerting
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:351
+name: overhang
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:352
+name: overhead
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:353
+name: parallel
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:354
+name: park
+is_a: ID:17 ! running
+
+[Term]
+id: ID:356
+name: pedal
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:359
+name: plates
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:361
+name: posture
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:362
+name: powerlifter
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:363
+name: powerlifting
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:364
+name: press
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:365
+name: pullup
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:366
+name: pumping
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:367
+name: pumps
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:368
+name: pushpull
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:369
+name: pushup
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:370
+name: quads
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:371
+name: rack
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:372
+name: rambling
+is_a: ID:17 ! running
+
+[Term]
+id: ID:373
+name: roids
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:374
+name: row
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:376
+name: shoulder
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:377
+name: sidestroke
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:380
+name: spotter
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:381
+name: spotting
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:383
+name: sprint
+is_a: ID:17 ! running
+
+[Term]
+id: ID:384
+name: squat
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:387
+name: straddle
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:390
+name: strength
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:391
+name: strides
+is_a: ID:17 ! running
+
+[Term]
+id: ID:392
+name: stronger
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:393
+name: supplements
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:394
+name: swim
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:395
+name: synchronized
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:396
+name: tank
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:399
+name: tour
+is_a: ID:18 ! cycling
+
+[Term]
+id: ID:401
+name: traps
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:402
+name: triathlete
+is_a: ID:17 ! running
+
+[Term]
+id: ID:403
+name: triathlon
+is_a: ID:17 ! running
+
+[Term]
+id: ID:404
+name: tricep
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:405
+name: trudgen
+is_a: ID:16 ! swimming
+
+[Term]
+id: ID:408
+name: weightlifter
+is_a: ID:14 ! weight-lifting

@@ -7,7 +7,6 @@ anaerobic
 ankle
 arch
 arm
-armpit
 athlete
 athletic
 back
@@ -15,8 +14,6 @@ backstroke
 bar
 barbell
 barefoot
-baseball
-basketball
 belt
 bench
 bicep
@@ -26,7 +23,6 @@ bicyclist
 bike
 bodybuilder
 bodybuilding
-bodyweight
 breaststroke
 breath
 bulk
@@ -39,7 +35,6 @@ chin
 compound
 cooldown
 creatine
-cushioning
 deadlift
 decline
 deltoid
@@ -56,51 +51,28 @@ freestyle
 front crawl
 gear
 grip
-groin
-gym
 hams
-heart
 hike
 hill
-hip
 hurdle
-hurling
 incline
 intervals
 jog
 kettlebell
-knee
 lap
 leg extension
-legs
 lift
 lung
 lunge
-lycra
 marathon
 mile
-mountain
-muscle
-muscular
-naked
-obese
-obesity
-over train
 overexerting
 overhang
 overhead
-pace
-pacing
-palms
 parallel
 park
-pecks
 pedal
-pedal
-pelvic
-pelvis
 plates
-posterior
 posture
 powerlifter
 powerlifting
@@ -115,21 +87,13 @@ rack
 rambling
 roids
 row
-shin
 shoulder
 sidestroke
-skinnier
-skinny
 spotter
 spotting
-springboard
 sprint
 squat
-squeezes
-stomach
 straddle
-straighten
-strap
 strength
 strides
 stronger
@@ -137,17 +101,10 @@ supplements
 swim
 synchronized
 tank
-thigh
-toned
 tour
-training
 traps
 triathlete
 triathlon
 tricep
-trophy
 trudgen
-upper body
-warm up
 weightlifter
-workout
