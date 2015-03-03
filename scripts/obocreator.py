@@ -15,21 +15,21 @@ def get_concept_id(obo_content, user_concept):
             return int(str(stanza.tags['id'][0]).split(':')[1])
     raise RuntimeError("Concept provided (%s) does not exist." % user_concept)
 
-if __name__ == "__main__":
-    import fileinput  # Gosh, I do love Python!
-    import obo
 
-    # NEW concepts, well, words related to concepts, i.e. melon IS A fruit.
-    files = ['../data/10-02-14/final/after/new_frequency_for_diet.txt',
-             '../data/10-02-14/final/after/new_frequency_for_exercise.txt']
-    obo_file = '../data/structure.obo'
+def add_terms_to_obo_ontology(output_file, known_concepts, obo_content):
+    '''
+    Reads a list of words (ontology terms, e.g. watermelon). For each term,
+    an input dialogues provided to allow the user to associate a concept
+    for this term. This relationship is written to an OBO file.
 
-    content = [line for line in fileinput.input(files)]
-    obo_content = [i for i in obo.Parser(obo_file)]
+    Note: this method works on the assumption that there exists an OBO file with
+    the basic structure and relationships to which terms should be added.
 
-    all_concepts = [str(i.tags['name'][0]) for i in obo_content]
-    core_concepts = all_concepts[2:18]  # Only display core concepts to user.
-
+    Args:
+        output_file (str): Location of
+        known_concepts (list): Ensures same concepts are not added again.
+        obo_content (list): Used to lookup ID of current and related concept.
+    '''
     # The term to insert into the OBO file later.
     term = ('\n[Term]\n'
             'id: ID:%s\n'
@@ -40,17 +40,30 @@ if __name__ == "__main__":
     last_id = int(str(obo_content[-1].tags['id'][0]).split(':')[1])
 
     # add each word to the OBO file for the related concept.
-    with open(obo_file, 'a') as f:
+    with open(output_file, 'a') as f:
         for word in content:
-            word = word.strip()
-            if word not in all_concepts:  # Do not add concept twice.
-                # What if the word should belong to multiple concepts?
-                # Do we want to add a healthy/unhealthy property?
-                last_id += 1
+            if word not in known_concepts:  # Do not add concept twice.
                 concept = raw_input('Select a concept for %s from:\n%s\n'
-                                    % (word, ', '.join(core_concepts)))
+                                    % (word, ', '.join(known_concepts[2:18])))
                 if 'skip' not in concept:
+                    last_id += 1
                     is_a_id = get_concept_id(obo_content, concept)
                     f.write(term % (last_id, word, is_a_id, concept))
             else:
                 print ('%s already exists in ontology.' % word)
+
+
+if __name__ == "__main__":
+    import fileinput
+    import obo
+
+    # NEW concepts, well, words related to concepts, i.e. melon IS A fruit.
+    files = ['../data/10-02-14/final/after/new_frequency_for_diet.txt',
+             '../data/10-02-14/final/after/new_frequency_for_exercise.txt']
+    output_file = '../data/structure.obo'
+
+    content = [line.strip() for line in fileinput.input(files)]
+    obo_content = [i for i in obo.Parser(output_file)]
+    known_concepts = [str(i.tags['name'][0]) for i in obo_content]
+
+    add_terms_to_obo_ontology(output_file, known_concepts, obo_content)
