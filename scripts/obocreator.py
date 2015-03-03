@@ -33,8 +33,7 @@ def add_terms_to_obo_ontology(output_file, known_concepts, obo_content):
     # The term to insert into the OBO file later.
     term = ('\n[Term]\n'
             'id: ID:%s\n'
-            'name: %s\n'
-            'is_a: ID:%s ! %s\n')
+            'name: %s\n')
 
     # Used to increment the ID
     last_id = int(str(obo_content[-1].tags['id'][0]).split(':')[1])
@@ -43,12 +42,17 @@ def add_terms_to_obo_ontology(output_file, known_concepts, obo_content):
     with open(output_file, 'a') as f:
         for word in content:
             if word not in known_concepts:  # Do not add concept twice.
-                concept = raw_input('Select a concept for %s from:\n%s\n'
-                                    % (word, ', '.join(known_concepts[2:18])))
-                if 'skip' not in concept:
+                concepts = raw_input('Select a concept for %s from:\n%s\n'
+                                     % (word, ', '.join(known_concepts[2:18])))
+                if 'skip' not in concepts:
+                    concepts = [item.strip() for item in concepts.split(',')]
                     last_id += 1
-                    is_a_id = get_concept_id(obo_content, concept)
-                    f.write(term % (last_id, word, is_a_id, concept))
+                    f.write(term % (last_id, word))
+                    # Add relationship, which may consist of be many concepts.
+                    for concept in concepts:
+                        is_a_id = get_concept_id(obo_content, concept)
+                        print is_a_id, concept
+                        f.write(('is_a: ID:%s ! %s\n') % (is_a_id, concept))
             else:
                 print ('%s already exists in ontology.' % word)
 
