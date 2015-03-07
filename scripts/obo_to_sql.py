@@ -63,5 +63,6 @@ def add_unknown_concepts_to_db(obo_content):
 if __name__ == "__main__":
     import obo
     create_tables()
+    # Note: structure.obo MUST contain the basic structure (initial concepts).
     obo_content = [i for i in obo.Parser('../data/structure.obo')]
     add_unknown_concepts_to_db(obo_content)
