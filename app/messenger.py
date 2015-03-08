@@ -5,6 +5,7 @@ class Messenger:
     def __init__(self):
         """
         Populate attributes on initialisation.
+
         Args:
             config (json): Client specific configuration file that contains
             the questions to send to the user.
