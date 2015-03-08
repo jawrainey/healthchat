@@ -10,74 +10,71 @@
   ],
   "responses" : {
     "beverages" : [
+      "What advantages and disadvantages do you think drinking those beverages have to your body?",
+      "What impact do you think drinking that beverage has to your health?",
       "How do you feel after having drank lots of that?",
       "How would your life be different if you drank less?",
-      "",
-      "",
-      ""
+      "How do you think that beverage impacts your health? How could you change that?"
     ],
     "dairy" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What benefits do you feel consuming dairy products has for your health and well-being?",
+      "What do you think are the advantages and disadvantages of dairy products to your health?",
+      "How do you plan to incorporate more dairy products into your current diet?",
+      "How do you think your health would differ if you increased dairy products in your diet?",
+      "Tell me about the dairy products in your current diet? Do you think these benefit your health?"
     ],
     "deserts" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What impact do you think deserts have on your health?",
+      "What do you think are the health benefits and drawbacks to eating deserts?",
+      "How do you incorporate deserts into your current diet?",
+      "How do you think your health differ if you reduced (or removed) deserts from your current diet?",
+      "How would you incorporate healthier alternatives to your current deserts in your diet?"
     ],
     "fruit" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What do you think are the health benefits to eating fruit?",
+      "What impact do you think fruits have on your health?",
+      "What do you consider the benefits and drawbacks to eating fruit in your diet?",
+      "How do you incorporate fruits into your current diet?",
+      "How would your health differ if you incorporated more fruits into your diet?"
     ],
     "grains" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What impact do you think those foods (carbohydrates based) have on your health?",
+      "What do you think are the health benefits and drawbacks of eating such carb-based foods?",
+      "What do you consider the health benefits of eating such foods?",
+      "How do you currently incorporate carbohydrates (grains) into your diet?",
+      "How do you think your health would change if you reduced your carbohydrate consumption?"
     ],
     "meat" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What do you think are the health benefits to eating meat?",
+      "What do you consider are the main health benefits and drawbacks of eating protein heavy foods?",
+      "What impact do you think protein based foods have on your health?",
+      "How do you think your health would differ if you reduced such meats from your current diet?",
+      "How do you currently incorporate meats into your diet?"
     ],
     "nuts" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What do you think are the health benefits to eating nuts?",
+      "What impact on your health do you think eating nuts regularly provides?",
+      "How would you describe the health benefits of eating nuts regularly?"
     ],
     "seafood" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What do you think are the benefits and drawbacks of eating seafood to your health?",
+      "What do you consider are the main health benefits of eating seafood regularly?",
+      "How do you incorporate seafood into your current diet? Would you like to add more?",
+      "How do you currently incorporate seafood into your diet?",
     ],
     "spices" : [
-      "",
-      "",
-      "",
-      "",
-      "What spices do you add to your dishes, and why?"
+      "What benefits do you think those spices have for your health?",
+      "How do you think those spices improve your diet and health?",
+      "How do you try to incorporate various spices into your own dishes?",
+      "How would your health differ if you increased the amount of spices in your diet?",
+      "Tell me about the last dish you had that included lots of spices?"
     ],
     "vegetable" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What benefits do you think those vegetables have to your health?",
+      "What do you consider the health benefits of eating vegetables?",
+      "How do you currently incorporate vegetables into your diet, and why?",
+      "How would your health differ if you incorporated more fruits into your diet?",
+      "In your opinion, what impact on your health do the vegetables in your current diet have?"
     ],
     "weight-lifting" : [
       "Tell me about your typical endurance routine?",
@@ -88,24 +85,24 @@
     ],
     "cycling" : [
       "How do you feel after you have had a cycling session?",
-      "",
-      "",
-      "",
-      ""
+      "How would life be different if you were to cycle more frequently?",
+      "What might make you want to cycle more often?",
+      "Would you tell me about your most enjoyable cycling experience?",
+      "What impact do you feel cycling is having on your health?"
     ],
     "running" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What impact do you feel running is having on your health?",
+      "What do you like and dislike about your current running routine and route?",
+      "What is your favourite memory related to running?",
+      "How do you feel after going for a run?",
+      "If you were to run more often, how do you think that would impact your health?"
     ],
     "swimming" : [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "What impact do you feel swimming has on your health and mental state?",
+      "What do you consider are the main health benefits of regular swimming?",
+      "How do you feel after having a swim?",
+      "How would you describe the health benefits of swimming?",
+      "Where is your favourite place to swim, and why?"
     ]
   }
 }
