@@ -1,0 +1,111 @@
+{
+  "initialQuestions" : [
+    "How is your current approach to exercise impacted your day-to-day lifestyle?",
+    "How do you feel about your current diet?",
+    "Is there anything you would like to change or address in your current diet?",
+    "What might make you want to change your diet?",
+    "How would your life be different if you were to change your diet?",
+    "What worries do you have about your exercise regime?",
+    "What do you like and dislike about your current diet and exercise regime?"
+  ],
+  "responses" : {
+    "beverages" : [
+      "How do you feel after having drank lots of that?",
+      "How would your life be different if you drank less?",
+      "",
+      "",
+      ""
+    ],
+    "dairy" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "deserts" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "fruit" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "grains" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "meat" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "nuts" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "seafood" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "spices" : [
+      "",
+      "",
+      "",
+      "",
+      "What spices do you add to your dishes, and why?"
+    ],
+    "vegetable" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "weight-lifting" : [
+      "Tell me about your typical endurance routine?",
+      "How familiar are you with endurance training?",
+      "How does weight-lifting make you feel?",
+      "What do you like and dislike about your current gym routine?",
+      "Do you have any favourite exercises at the gym? Why are they your favourites?"
+    ],
+    "cycling" : [
+      "How do you feel after you have had a cycling session?",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "running" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "swimming" : [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}
