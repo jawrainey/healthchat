@@ -1,6 +1,7 @@
 .ropeproject/
 /meetings/
 *.swp
+*.swo
 *.pyc
 *.db
 notes.md
