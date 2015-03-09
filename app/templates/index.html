@@ -1,8 +1,14 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+  <title>Health chat service - jawrainey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Placed here rather than footer as we need to display the initial message -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/custom.css', _external=True) }}" rel="stylesheet">
   <script>
   $(document).ready(function() {
       // explicit package upon connection to prevent global namespace use.
@@ -20,13 +26,13 @@
   </script>
 </head>
 <body>
-  <div class="container" style="margin:0 auto; width:50%;">
+  <div class="container">
     <h1>Health chat service</h1>
     <div id="messages"></div>
-    <form id="emit" method="POST" action='#'>
-      <textarea style="width:100%; height:50px; padding:5px;" id="emit_data" placeholder="Type a message here"></textarea>
-      <input type="submit" value="Send">
-    </form>
+      <form id="emit" class="form" method="POST" action='#'>
+        <textarea id="emit_data" class="form-control" placeholder="Type a response here"></textarea>
+        <input type="submit" class="btn btn-default" value="Send">
+      </form>
   </div>
 </body>
 </html>
