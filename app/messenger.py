@@ -84,7 +84,8 @@ class Messenger:
             dict: contains responses to send to the user.
         '''
         import json
-        with open('../data/questions.json') as f:
+        path = '/Users/jawrainey/Dropbox/uni/04/CM3203/fyp/data/questions.json'
+        with open(path) as f:
             return json.load(f)
 
     def __concept_frequency(self, message):

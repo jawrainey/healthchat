@@ -7,7 +7,8 @@ class Database:
         Based on: http://blog.adimian.com/2014/10/cte-and-closure-tables/
         '''
         import sqlite3
-        conn = sqlite3.connect('../test.db')
+        path = '/Users/jawrainey/Dropbox/uni/04/CM3203/fyp/test.db'
+        conn = sqlite3.connect(path)
         self.conn = conn
         self.cursor = conn.cursor()
 
