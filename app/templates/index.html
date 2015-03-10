@@ -21,6 +21,7 @@
       // response sent from server; user message sent to output on screen.
       socket.on('response', function(msg) {
         $("#messages").append("<p>" + msg.data + "</p>");
+        $("#messages").scrollTop($("#messages")[0].scrollHeight); // latest message first
       });
   });
   </script>
