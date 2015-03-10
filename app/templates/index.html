@@ -4,10 +4,10 @@
   <title>Health chat service - jawrainey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Placed here rather than footer as we need to display the initial message -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/jquery.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='js/socket.io.min.js', _external=True) }}"></script>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css', _external=True) }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/custom.css', _external=True) }}" rel="stylesheet">
   <script>
   $(document).ready(function() {
