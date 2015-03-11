@@ -4,7 +4,6 @@ html {
 }
 
 .container {
-  background-color: green;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -19,19 +18,25 @@ html {
   height: 15%;
 }
 
-.form {
-  padding-top: 1em;
-  background: pink;
+#messages {
+  border: 1px solid #27AE60;
+  border-radius: 4px;
+  height: 72.5%;
+  overflow: scroll;
+  padding: 1em;
 }
 
-#messages {
-  height: 75%;
-  background: gold;
-  overflow: scroll;
-}
+h1 { border-bottom: 1px solid #27AE60; }
+
+/* Not certain how I feel about this, but showing it is useful for testing. */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-thumb { background-color: #95A5A6; }
+
+/* Am unsure if I want to allow vertical scrolling as it would ruin the 'one page' affect. */
+textarea { resize: none; }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 500px;
+    max-width: 750px;
   }
 }
