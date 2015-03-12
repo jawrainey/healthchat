@@ -41,7 +41,7 @@ html {
 /* The left container of the message-wrap div */
 .message {
   float: left;
-  width: 75%;
+  width: 85%;
   word-wrap: break-word; /* This is important to prevent overflow of text. */
   border-right: 1px solid #DCDCDC;
 }
@@ -49,7 +49,7 @@ html {
 /* The right container of the message-wrap div */
 .feedback {
   float: right;
-  width: 25%;
+  width: 15%;
 }
 
 .message, .feedback {
