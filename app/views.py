@@ -14,14 +14,13 @@ def index():
 def user_received_message(user_message):
     # TODO: currently, empty messages can be sent.
     # TODO: save message to database for improvements later...
-    # TODO: remove nasty inline HTML elements from view
-    emit('response', {'data': '<b>User:</b> ' + user_message['data']})
+    add_new_lines_user_message = user_message['data'].replace('\n', '</br>')
+    emit('response', {'type': 'received', 'data': add_new_lines_user_message})
     open_ended_question = Messenger().open_ended_question(user_message['data'])
-    emit('response', {'data': '<b>Service:</b> ' + open_ended_question})
+    emit('response', {'type': 'service', 'data': open_ended_question})
 
 
 @socketio.on('connect', namespace='/chat')
 def on_connection():
     # Once a connection is established, we want to send the initial message.
-    emit('response',
-         {'data': '<b>Service:</b> ' + Messenger().initial_message()})
+    emit('response', {'type': 'service', 'data': Messenger().initial_message()})
