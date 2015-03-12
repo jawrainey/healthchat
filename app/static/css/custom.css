@@ -34,7 +34,7 @@ html {
   border-radius: 4px;
 }
 
-#message-wrap:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; }
+#message-wrap:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
 #message-wrap:nth-of-type(odd) { background-color: #EEEEEE; border-color: #DCDCDC; }
 #message-wrap:first-child { border-color: #27AE60; }
 
