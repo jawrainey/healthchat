@@ -41,7 +41,7 @@ html {
 /* The left container of the message-wrap div */
 .message {
   float: left;
-  width: 85%;
+  width: 80%;
   word-wrap: break-word; /* This is important to prevent overflow of text. */
   border-right: 1px solid #DCDCDC;
 }
@@ -49,7 +49,7 @@ html {
 /* The right container of the message-wrap div */
 .feedback {
   float: right;
-  width: 15%;
+  width: 20%;
 }
 
 .message, .feedback {
@@ -76,6 +76,11 @@ h1 {
 textarea { resize: none; }
 textarea.form-control { height: 100%; }
 #emit { height: 12.5%; }
+
+
+.btn { padding: 0px 8px; }
+.left-arrow { float: left; }
+.right-arrow { float: right; }
 
 @media (min-width: 1200px) {
   .container {
