@@ -79,6 +79,6 @@ textarea.form-control { height: 100%; }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 750px;
+    max-width: 650px;
   }
 }
