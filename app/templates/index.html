@@ -31,8 +31,7 @@
                   feedback +
                 "</div>";
 
-      $("#messages").append(output);
-      $("#messages").scrollTop($("#messages")[0].scrollHeight); // latest message first
+      $("#messages").prepend(output);
     });
 
     // Allow user to press enter to submit message.
@@ -52,13 +51,13 @@
 <body>
   <div class="container">
     <h1>Jamie's health chat</h1>
-    <div id="messages"></div>
-  </div>
-  <footer class="footer">
-    <div class="container">
       <form id="emit" class="form" method="POST" action='#'>
         <textarea id="emit_data" class="form-control" placeholder="Type your response here and press enter to submit your message."></textarea>
       </form>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div id="messages"></div>
     </div>
   </footer>
 </body>

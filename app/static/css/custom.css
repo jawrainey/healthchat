@@ -16,13 +16,13 @@ html {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10%;
+  height: 75%;
 }
 
 #messages {
   border: 1px solid #CECECE;
   border-radius: 4px;
-  height: 77.5%;
+  height: 95%;
   overflow: scroll;
   padding: 1em 1em 0 1em;
 }
@@ -36,7 +36,9 @@ html {
 
 #message-wrap:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; }
 #message-wrap:nth-of-type(odd) { background-color: #EEEEEE; border-color: #DCDCDC; }
+#message-wrap:first-child { border-color: #27AE60; }
 
+/* The left container of the message-wrap div */
 .message {
   float: left;
   width: 75%;
@@ -44,6 +46,7 @@ html {
   border-right: 1px solid #DCDCDC;
 }
 
+/* The right container of the message-wrap div */
 .feedback {
   float: right;
   width: 25%;
@@ -60,7 +63,10 @@ html {
   margin-bottom: 0;
 }
 
-h1 { border-bottom: 1px solid #DCDCDC; }
+h1 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #DCDCDC;
+}
 
 /* Not certain how I feel about this, but showing it is useful for testing. */
 ::-webkit-scrollbar { width: 5px; }
@@ -68,6 +74,8 @@ h1 { border-bottom: 1px solid #DCDCDC; }
 
 /* Am unsure if I want to allow vertical scrolling as it would ruin the 'one page' affect. */
 textarea { resize: none; }
+textarea.form-control { height: 100%; }
+#emit { height: 12.5%; }
 
 @media (min-width: 1200px) {
   .container {
