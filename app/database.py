@@ -1,6 +1,9 @@
 class Database:
     '''
     Used to CRUD database. Couples all queries to same object.
+
+    Note: this is preferred over a models.py (declarative SQLAlchemy) as the
+    'Closure' table does not contain a primary key, which causes issues.
     '''
     def __init__(self):
         '''
