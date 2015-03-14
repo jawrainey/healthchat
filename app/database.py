@@ -55,7 +55,7 @@ class Database:
                  'WHERE a.parent = ' + str(concept_id))
         return db.engine.execute(query).fetchall()
 
-    def __create_tables(self):
+    def create_tables(self):
         '''
         Creates the two tables used to store the ontology concepts and terms.
             - 'nodes' stores the .obo content.

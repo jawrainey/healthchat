@@ -1,41 +1,23 @@
 # Note: based on - http://blog.adimian.com/2014/10/cte-and-closure-tables/
 import sqlite3
 
-conn = sqlite3.connect('test.db')
+conn = sqlite3.connect('/Users/jawrainey/Dropbox/uni/04/CM3203/fyp/test.db')
 cursor = conn.cursor()
 
 
-def create_tables():
-    '''
-    Creates the two tables used to store the ontology concepts and terms.
-        - 'nodes' stores the .obo content.
-        - 'closure' stores the hierarchy in a transitive closure representation.
-    '''
-    cursor.execute(
-        'CREATE TABLE IF NOT EXISTS nodes ('
-        'id INTEGER NOT NULL PRIMARY KEY,'
-        'parent INTEGER REFERENCES nodes(id),'
-        'name VARCHAR(100))')
-
-    cursor.execute(
-        'CREATE TABLE IF NOT EXISTS closure ('
-        'parent INTEGER REFERENCES nodes(id), '
-        'child INTEGER REFERENCES nodes(id), '
-        'depth INTEGER)')
-    conn.commit()
-
-
-def add_unknown_concepts_to_db(obo_content):
+def populate_from_obo():
     '''
     Inserts concepts/terms into the database.
 
     Moreover, the transitive closure table is also updated upon insertion
-    of an element to ensure it's retrievable later...
-
-    Args:
-        obo_content (list): a list of Stanzas, i.e. dictionaries containing
-        the relevant obo structure, such as id, name, and relationship.
+    of an element to ensure it's retrievable later.
     '''
+    import obo
+    # Note: structure.obo MUST contain the initial concepts.
+    # TODO: move structure.obo to environmental variable.
+    path = '/Users/jawrainey/Dropbox/uni/04/CM3203/fyp/data/structure.obo'
+    obo_content = [i for i in obo.Parser(path)]
+
     known_ids = [r[0] for r in
                  cursor.execute('SELECT id FROM nodes').fetchall()]
 
@@ -58,11 +40,3 @@ def add_unknown_concepts_to_db(obo_content):
             cursor.executemany(stm, cursor.fetchall())
             cursor.execute(stm, (last_id, last_id, 0))
     conn.commit()
-
-
-if __name__ == "__main__":
-    import obo
-    create_tables()
-    # Note: structure.obo MUST contain the basic structure (initial concepts).
-    obo_content = [i for i in obo.Parser('../data/structure.obo')]
-    add_unknown_concepts_to_db(obo_content)
