@@ -29,11 +29,14 @@ class Question(db.Model):
 
     id = db.Column(db.Integer, nullable=False, unique=True, primary_key=True)
     question = db.Column(db.String, nullable=False)
+    concept = db.Column(db.String, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, _question, _rating):
+    def __init__(self, _question, _concept, _rating):
         self.question = _question
+        self.concept = _concept
         self.rating = _rating
 
     def __repr__(self):
-        return 'Question & rating: %r -> %r' % (self.question, self.rating)
+        return 'Concept: question -> rating: %r: %r : %r' \
+            % (self.concept, self.question, self.rating)
