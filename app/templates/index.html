@@ -47,9 +47,9 @@
     // TODO: currently using blur to deselect form.
     // Need a way to reset it without leaving newline in textarea.
     // blur currently works, but then user has to reselect form -- bad UX.
-    $('.form-control').keypress(function(e) {
+    $('form#emit').keypress(function(e) {
       if (e.which == 13) {
-        $('.form').submit();
+        $('#emit').submit();
         $('textarea').blur().val('');
       }
     });
