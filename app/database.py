@@ -1,20 +1,16 @@
+from app import db
+
+
 class Database:
     '''
     Used to CRUD database. Couples all queries to same object.
 
     Note: this is preferred over a models.py (declarative SQLAlchemy) as the
     'Closure' table does not contain a primary key, which causes issues.
-    '''
-    def __init__(self):
-        '''
-        Based on: http://blog.adimian.com/2014/10/cte-and-closure-tables/
-        '''
-        import sqlite3
-        path = '/Users/jawrainey/Dropbox/uni/04/CM3203/fyp/test.db'
-        conn = sqlite3.connect(path)
-        self.conn = conn
-        self.cursor = conn.cursor()
 
+    Table choices based on:
+        http://blog.adimian.com/2014/10/cte-and-closure-tables/
+    '''
     def concept_id(self, concept):
         '''
         Obtains the ID for a given ontological concept, i.e. diet.
@@ -26,8 +22,8 @@ class Database:
         Returns:
             str: ID of the concept, otherwise raise exception.
         '''
-        query = 'SELECT id FROM nodes WHERE name = ?'
-        row = self.cursor.execute(query, (concept,)).fetchone()
+        query = "SELECT id FROM nodes WHERE name = '" + str(concept) + "'"
+        row = db.engine.execute(query).fetchone()
         return row[0] if row else None
 
     def parent_name(self, parent_id):
@@ -42,7 +38,7 @@ class Database:
             str: name of parent concept based on ID.
         '''
         query = 'SELECT name FROM nodes WHERE id = ' + str(parent_id)
-        return self.cursor.execute(query).fetchone()[0]
+        return db.engine.execute(query).fetchone()[0]
 
     def get_subtree_of_concept(self, concept_id):
         '''
@@ -57,7 +53,7 @@ class Database:
         query = ('SELECT n.* FROM nodes n '
                  'JOIN closure a ON (n.id = a.child) '
                  'WHERE a.parent = ' + str(concept_id))
-        return self.cursor.execute(query).fetchall()
+        return db.engine.execute(query).fetchall()
 
     def __create_tables(self):
         '''
@@ -65,15 +61,15 @@ class Database:
             - 'nodes' stores the .obo content.
             - 'closure' stores the hierarchy as a transitive representation.
         '''
-        self.cursor.execute(
+        db.engine.execute(
             'CREATE TABLE IF NOT EXISTS nodes ('
             'id INTEGER NOT NULL PRIMARY KEY,'
             'parent INTEGER REFERENCES nodes(id),'
             'name VARCHAR(100))')
 
-        self.cursor.execute(
+        db.engine.execute(
             'CREATE TABLE IF NOT EXISTS closure ('
             'parent INTEGER REFERENCES nodes(id), '
             'child INTEGER REFERENCES nodes(id), '
             'depth INTEGER)')
-        self.conn.commit()
+        db.session.commit()
