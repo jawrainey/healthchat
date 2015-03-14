@@ -21,5 +21,17 @@ def populate_ontology():
     from utils import obo_to_sql
     obo_to_sql.populate_from_obo()
 
+
+def questions_to_sql():
+    '''
+    Reads the pre-defined OEQ responses, and saves them to the database.
+    '''
+    messages = messenger.Messenger().config['responses']
+    for concept, questions in messages.iteritems():
+        for question in questions:
+            db.session.add(models.Question(question, concept, 1))
+    db.session.commit()
+
+
 if __name__ == '__main__':
     socketio.run(app)
