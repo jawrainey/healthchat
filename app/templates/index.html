@@ -48,6 +48,27 @@
       $("#messages").prepend(output);
     });
 
+    // When vote cast send data to server to enable response (update) or question.
+    // NOTE: this will only change IFF a down-vote has been cast.
+    // TODO: What happens when up/down for initial question, or RS?
+    $(document).on('click', 'button', function (e) {
+        // Making this available to update it below on response -- sneaky & probably dangerous.
+        question_div = $(this).closest('#message-wrap').find('.message');
+        // Send relevant data (associated OEQ, rating, previous msg for analysis) to server.
+        socket.emit('vote', {
+          question: question_div.text(),
+          rating: $(this).attr('class').indexOf("left") > -1 ?  "down": "up",
+          prev_user_msg : $(this).closest('#messages').find('.client_message:first').text()
+        });
+        return false;
+    });
+
+    // response sent from server to client once a vote has been cast.
+    socket.on('vote response', function(msg) {
+      // TODO: make it obvious text has changed.
+      question_div.text(msg.data);
+    });
+
     // Allow user to press enter to submit message.
     // TODO: currently using blur to deselect form.
     // Need a way to reset it without leaving newline in textarea.
