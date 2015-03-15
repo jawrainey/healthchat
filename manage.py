@@ -7,7 +7,6 @@ def init_db():
     '''
     from app import database
     database.Database().create_tables()
-    # Create messages and question tables
     # creating afterwards as the database class is more likely to throw errors.
     db.drop_all()
     db.create_all()
