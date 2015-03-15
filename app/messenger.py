@@ -36,11 +36,11 @@ class Messenger:
 
         To achieve this we currently:
             1. Detect most frequent concept based on terms in user's message.
-            2. Select pre-defined list of OEQ for that concept.
-            3. Randomly select and return an OEQ from list (2.).
+            2. Select pre-defined OEQ from database for that concept.
+            3. Group OEQ's by rating.
+            4. Randomly select and return one of the highest rating questions.
 
         Args:
-            questions (dict): concept (key), and list of OEQs (values).
             user_message (str): the message sent to the client by the user.
 
         Returns:
@@ -63,6 +63,7 @@ class Messenger:
             return random.choice(questions)
         else:
             # NOTE: no terms detected in response send clarification question.
+            # TODO: this should be refactored to questions.json
             return 'Can you clarify what you meant by that?'
 
     def reflective_summary(self, user_message):
