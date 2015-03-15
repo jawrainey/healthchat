@@ -33,7 +33,12 @@
 
       feedback = (msg.type.indexOf("service") > -1) ? "<div class=\"feedback\">" + left_arrow + right_arrow + "</div>" : "";
 
-      output = "<div id=\"message-wrap\">" +
+      // required to easily identify 'message-wrap' that contains user messages.
+      // TODO: remove message-wrap ID as there are multiple message-wraps, so
+      // semantically, it should be a class. Instead, use these classes in CSS.
+      named_id = (msg.type.indexOf("service") > -1) ? "service_message" : "client_message";
+
+      output = "<div id=\"message-wrap\" class=" + named_id + ">" +
                   "<div class=\"message\">" +
                     "<p>" + msg.data + "</p>" +
                   "</div>" +
