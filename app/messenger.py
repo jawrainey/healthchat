@@ -46,12 +46,21 @@ class Messenger:
         Returns:
             str: the OEQ response to send to the user.
         '''
+        from app import models
+
         import random
         terms_in_message = self.__concept_frequency(user_message)
         if terms_in_message:
             most_freq_concept = terms_in_message.most_common()[0][0]
-            concept_responses = self.config['responses'][most_freq_concept]
-            return random.choice(concept_responses)
+            # TODO: can highest rating group be obtained via SQL?
+            # Obtain all rows and order by rating.
+            questions = (models.Question.query.filter_by(
+                concept=most_freq_concept).order_by(
+                    models.Question.rating.desc()))
+            # Select all questions that are of highest rating.
+            questions = [i.question for i in questions
+                         if i.rating == questions[0].rating]
+            return random.choice(questions)
         else:
             # NOTE: no terms detected in response send clarification question.
             return 'Can you clarify what you meant by that?'
