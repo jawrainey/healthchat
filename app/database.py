@@ -19,27 +19,27 @@ class Database:
             concept (str): the concept to obtain the ID for.
 
         Returns:
-            str: ID of the concept, otherwise raise exception.
+            str: ID of the concept, otherwise None.
         '''
         from nltk import SnowballStemmer
         concept = SnowballStemmer("english").stem(str(concept))
         query = "SELECT id FROM nodes WHERE name LIKE '%" + concept + "%'"
-        row = db.engine.execute(query).fetchone()
-        return row[0] if row else None
+        row = db.engine.execute(query).fetchone()[0]
+        return row if row else None
 
     def parent_name(self, parent_id):
         '''
         Obtains the name of a concept based on the ID.
-        TODO: error checking; id may not always be valid (unlike above query).
 
         Args:
             parent_id (str): the ID of the parent to search for.
 
         Returns:
-            str: name of parent concept based on ID.
+            str: name of parent concept based on ID, otherwise None
         '''
         query = 'SELECT name FROM nodes WHERE id = ' + str(parent_id)
-        return db.engine.execute(query).fetchone()[0]
+        row = db.engine.execute(query).fetchone()[0]
+        return row if row else None
 
     def get_subtree_of_concept(self, concept_id):
         '''
