@@ -66,7 +66,7 @@
     // response sent from server to client once a vote has been cast.
     socket.on('vote response', function(msg) {
       // TODO: make it obvious text has changed.
-      question_div.text(msg.data);
+      question_div.find("p").text(msg.data);
     });
 
     // Allow user to press enter to submit message.
