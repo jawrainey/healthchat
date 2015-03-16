@@ -13,8 +13,7 @@ class Database:
     '''
     def concept_id(self, concept):
         '''
-        Obtains the ID for a given ontological concept, i.e. diet.
-        TODO: this query is limited as it's specific, consider 'LIKE'.
+        Obtains the ID for a given ontological concept using stemming.
 
         Args:
             concept (str): the concept to obtain the ID for.
@@ -22,7 +21,9 @@ class Database:
         Returns:
             str: ID of the concept, otherwise raise exception.
         '''
-        query = "SELECT id FROM nodes WHERE name = '" + str(concept) + "'"
+        from nltk import SnowballStemmer
+        concept = SnowballStemmer("english").stem(str(concept))
+        query = "SELECT id FROM nodes WHERE name LIKE '%" + concept + "%'"
         row = db.engine.execute(query).fetchone()
         return row[0] if row else None
 
