@@ -9,7 +9,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'test.db')
 
 app = Flask(__name__)
 app.debug = True
-app.config['SECRET_KEY'] = 'supersectetsessionrequiredkeyforsecurityreasons'
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 
 socketio = SocketIO(app)
