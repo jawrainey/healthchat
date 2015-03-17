@@ -24,8 +24,8 @@ class Database:
         from nltk import SnowballStemmer
         concept = SnowballStemmer("english").stem(str(concept))
         query = "SELECT id FROM nodes WHERE name LIKE '%" + concept + "%'"
-        row = db.engine.execute(query).fetchone()[0]
-        return row if row else None
+        row = db.engine.execute(query).fetchone()
+        return row[0] if row else None
 
     def parent_name(self, parent_id):
         '''
@@ -38,8 +38,8 @@ class Database:
             str: name of parent concept based on ID, otherwise None
         '''
         query = 'SELECT name FROM nodes WHERE id = ' + str(parent_id)
-        row = db.engine.execute(query).fetchone()[0]
-        return row if row else None
+        row = db.engine.execute(query).fetchone()
+        return row[0] if row else None
 
     def get_subtree_of_concept(self, concept_id):
         '''
