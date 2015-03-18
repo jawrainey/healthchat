@@ -50,6 +50,7 @@ class Messenger:
 
         import random
         terms_in_message = self.__concept_frequency(user_message)
+
         if terms_in_message:
             most_freq_concept = terms_in_message.most_common()[0][0]
             # TODO: can highest rating group be obtained via SQL?
@@ -108,8 +109,10 @@ class Messenger:
         Returns:
             dict: contains frequency (counter) of terms in user's message.
         '''
+        from app import models
         import collections
         import re
+
         # Remove none English characters besides spaces.
         terms = re.sub(r'[^a-zA-Z&^\s]', '', message)
         terms = message.lower().split(' ')
@@ -119,5 +122,10 @@ class Messenger:
             concept = self.db.concept_id(term)
             if concept:
                 parent_id = self.db.get_subtree_of_concept(concept)[0][1]
-                concepts_in_user_message[self.db.parent_name(parent_id)] += 1
+                parent_name = self.db.parent_name(parent_id)
+                # Prevents issue of detecting concepts without related questions
+                # e.g. without 'parent' concept (health, diet, exercise, etc.)
+                concepts = set([i.concept for i in models.Question.query.all()])
+                if parent_name in concepts:
+                    concepts_in_user_message[parent_name] += 1
         return concepts_in_user_message
