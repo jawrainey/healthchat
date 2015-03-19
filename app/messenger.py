@@ -131,9 +131,9 @@ class Messenger:
         import re
 
         # Remove none English characters besides spaces.
-        # TODO: this does not account for punctuation, e.g. 'apples.'
-        terms = re.sub(r'[^a-zA-Z&^\s]', '', message)
-        terms = message.lower().split(' ')
+        terms = re.sub(r'[^a-zA-Z\s]', '', message).lower().split(' ')
+        # Remove white spaces from replace above, and short (I) # words
+        terms = [term for term in terms if len(term) > 1]
         concepts_in_user_message = collections.Counter()
 
         for term in terms:
