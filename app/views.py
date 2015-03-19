@@ -44,12 +44,11 @@ def __cast_vote(_question, _rating):
         question (str): The question to vote against.
         rating (str): can either be 'up' or 'down'.
     '''
-    # TODO: what if the question is non-existing?
-    # User modifies client-side. Currently crash. Try/accept required?
     row = models.Question.query.filter_by(question=_question).first()
     # The limits exist to not exceed threshold (0, 1)
-    if 'up' in _rating and row.rating <= .9:
-        row.rating += .1
-    if 'down' in _rating and row.rating >= .1:
-        row.rating -= .1
-    db.session.commit()
+    if row:
+        if 'up' in _rating and row.rating <= .9:
+            row.rating += .1
+        if 'down' in _rating and row.rating >= .1:
+            row.rating -= .1
+        db.session.commit()
