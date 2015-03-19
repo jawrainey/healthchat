@@ -77,10 +77,22 @@ textarea { resize: none; }
 textarea.form-control { height: 100%; }
 #emit { height: 12.5%; }
 
-
 .btn { padding: 0px 8px; }
 .left-arrow { float: left; }
 .right-arrow { float: right; }
+
+#feedback {
+  top: 50%;
+  left: -2.5%;
+  position: absolute;
+  z-index: 100000;
+
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5)
+}
 
 @media (min-width: 1200px) {
   .container {
