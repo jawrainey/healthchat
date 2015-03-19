@@ -34,7 +34,8 @@
                      "<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span>" +
                     "</button>";
 
-      feedback = (msg.type.indexOf("service") > -1) ? "<div class=\"feedback\">" + left_arrow + right_arrow + "</div>" : "";
+      // Add feedback only for
+      feedback = (msg.type.indexOf("service") > -1 && $('.service_message').length >= 1) ? "<div class=\"feedback\">" + left_arrow + right_arrow + "</div>" : "";
 
       // required to easily identify 'message-wrap' that contains user messages.
       // TODO: remove message-wrap ID as there are multiple message-wraps, so
