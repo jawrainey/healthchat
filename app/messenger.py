@@ -64,7 +64,7 @@ class Messenger:
             return random.choice(questions)
         else:
             # NOTE: no terms detected in response send clarification question.
-            # TODO: this should be refactored to questions.json
+            # TODO: re-factor to questions.json then load/save to db like OEQ.
             return 'Can you clarify what you meant by that?'
 
     def reflective_summary(self, user_message):
@@ -114,6 +114,7 @@ class Messenger:
         import re
 
         # Remove none English characters besides spaces.
+        # TODO: this does not account for punctuation, e.g. 'apples.'
         terms = re.sub(r'[^a-zA-Z&^\s]', '', message)
         terms = message.lower().split(' ')
         concepts_in_user_message = collections.Counter()
