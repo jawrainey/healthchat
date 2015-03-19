@@ -54,8 +54,7 @@
 
     // When vote cast send data to server to enable response (update) or question.
     // NOTE: this will only change IFF a down-vote has been cast.
-    // TODO: What happens when up/down for initial question, or RS?
-    $(document).on('click', 'button', function (e) {
+    $(document).on('click', '.left-arrow, .right-arrow', function (e) {
         // Making this available to update it below on response -- sneaky & probably dangerous.
         question_div = $(this).closest('#message-wrap').find('.message');
         // Send relevant data (associated OEQ, rating, previous msg for analysis) to server.
