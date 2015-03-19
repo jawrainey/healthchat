@@ -41,8 +41,8 @@ def __cast_vote(_question, _rating):
     Updates the rating of a question voted for by a user.
 
     Args:
-        question (str): The question to vote against.
-        rating (str): can either be 'up' or 'down'.
+        _question (str): The question to vote against.
+        _rating (str): can either be 'up' or 'down'.
     '''
     row = models.Question.query.filter_by(question=_question).first()
     # The limits exist to not exceed threshold (0, 1)
