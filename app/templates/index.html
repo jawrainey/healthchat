@@ -20,6 +20,9 @@
     });
     // response sent from server; user message sent to output on screen.
     socket.on('response', function(msg) {
+      // Only the topmost feedback div (like/dislike) should exist.
+      if($('.feedback').length) $('.feedback').remove();
+
       // Add a right column that includes feedback bar in service response.
       // TODO: remove duplicated code. Possibly build this in Python end?
       // Would prevent evil-doers, and could remove duplicated code.
