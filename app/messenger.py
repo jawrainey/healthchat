@@ -58,7 +58,7 @@ class Messenger:
                              concept=most_freq_concept).order_by(
                              models.Question.rating.desc()))
 
-            # Rounding for distinction when comparing
+            # Rounding for distinction, e.g. .6 vs .600000000
             highest_rated_questions = [i.question for i in all_questions
                                        if round(i.rating, 1) ==
                                        round(all_questions[0].rating, 1)]
