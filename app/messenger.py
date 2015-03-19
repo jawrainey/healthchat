@@ -47,21 +47,38 @@ class Messenger:
             str: the OEQ response to send to the user.
         '''
         from app import models
-
+        from flask import request
         import random
+
         terms_in_message = self.__concept_frequency(user_message)
 
         if terms_in_message:
             most_freq_concept = terms_in_message.most_common()[0][0]
-            # TODO: can highest rating group be obtained via SQL?
-            # Obtain all rows and order by rating.
-            questions = (models.Question.query.filter_by(
-                concept=most_freq_concept).order_by(
-                    models.Question.rating.desc()))
-            # Select all questions that are of highest rating.
-            questions = [i.question for i in questions
-                         if i.rating == questions[0].rating]
-            return random.choice(questions)
+            all_questions = (models.Question.query.filter_by(
+                             concept=most_freq_concept).order_by(
+                             models.Question.rating.desc()))
+
+            # Rounding for distinction when comparing
+            highest_rated_questions = [i.question for i in all_questions
+                                       if round(i.rating, 1) ==
+                                       round(all_questions[0].rating, 1)]
+
+            # Made a set as we do not want to know many times each was sent.
+            all_sent = [i.content for i in set(models.Message.query.filter_by(
+                conversation_id=request.namespace.socket.sessid,
+                status='service').all())]
+
+            # Send all highest rated questions, then those not sent, then any.
+            unsent_hrq = list(set(highest_rated_questions).difference(all_sent))
+            all_questions = [i.question for i in all_questions]
+            unsent_question = list(set(all_questions).difference(all_sent))
+
+            if unsent_hrq:
+                return random.choice(unsent_hrq)
+            elif unsent_question:
+                return random.choice(unsent_question)
+            else:
+                return random.choice(all_questions)
         else:
             # NOTE: no terms detected in response send clarification question.
             # TODO: re-factor to questions.json then load/save to db like OEQ.

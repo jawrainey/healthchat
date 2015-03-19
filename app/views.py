@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from flask.ext.socketio import emit
 from messenger import Messenger
 from app import app, db, models, socketio
@@ -28,6 +28,12 @@ def user_received_message(user_message):
 
     open_ended_question = Messenger().open_ended_question(user_message['data'])
     emit('response', {'type': 'service', 'data': open_ended_question})
+
+    cid = request.namespace.socket.sessid  # current conversation id
+    # Save message to database for future analysis: to improve ontology.
+    db.session.add(models.Message('received', user_message['data'], cid))
+    db.session.add(models.Message('service', open_ended_question, cid))
+    db.session.commit()
 
 
 @socketio.on('connect', namespace='/chat')
