@@ -15,7 +15,7 @@
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
     // emits user input data to server.
     $('form#emit').submit(function(event) {
-        socket.emit('user', {data: $('#emit_data').val()});
+        socket.emit('user', $('#emit_data').val());
         return false;
     });
     // response sent from server; user message sent to output on screen.

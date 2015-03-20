@@ -18,20 +18,16 @@ def user_received_message(user_message):
     Receives a clients message and sends an appropriate contextual response.
 
     Args:
-        user_message (dict): Contains the user message (data).
-        TODO: simplify argument by sending only a string.
+        user_message (string): Contains the user message.
     '''
-    # TODO: currently, empty messages can be sent.
-
-    add_new_lines_user_message = user_message['data'].replace('\n', '</br>')
+    add_new_lines_user_message = user_message.replace('\n', '</br>')
     emit('response', {'type': 'received', 'data': add_new_lines_user_message})
 
-    open_ended_question = Messenger().open_ended_question(user_message['data'])
+    open_ended_question = Messenger().open_ended_question(user_message)
     emit('response', {'type': 'service', 'data': open_ended_question})
 
     cid = request.namespace.socket.sessid  # current conversation id
-    # Save message to database for future analysis: to improve ontology.
-    db.session.add(models.Message('received', user_message['data'], cid))
+    db.session.add(models.Message('received', user_message, cid))
     db.session.add(models.Message('service', open_ended_question, cid))
     db.session.commit()
 
