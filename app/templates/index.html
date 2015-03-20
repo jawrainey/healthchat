@@ -23,19 +23,14 @@
       // Only the topmost feedback div (like/dislike) should exist.
       if($('.feedback').length) $('.feedback').remove();
 
-      // Add a right column that includes feedback bar in service response.
-      // TODO: remove duplicated code. Possibly build this in Python end?
-      // Would prevent evil-doers, and could remove duplicated code.
-      left_arrow = "<button type=\"button\" class=\"btn btn-default left-arrow\">" +
-                     "<span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>" +
-                   "</button>";
+      // Add a vote column that includes feedback bar in service response.
+      feedback_column = "<div class=\"feedback\">" +
+                          "<p><span class=\"glyphicon glyphicon-arrow-up up-vote\"></span></p>" +
+                          "<p><span class=\"glyphicon glyphicon-arrow-down down-vote\"></span></p>" +
+                        "</div>";
 
-      right_arrow = "<button type=\"button\" class=\"btn btn-default right-arrow\">" +
-                     "<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span>" +
-                    "</button>";
-
-      // Add feedback only for
-      feedback = (msg.type.indexOf("service") > -1 && $('.service_message').length >= 1) ? "<div class=\"feedback\">" + left_arrow + right_arrow + "</div>" : "";
+      // Add feedback only for topmost service message
+      feedback = (msg.type.indexOf("service") > -1 && $('.service_message').length >= 1) ? feedback_column : "";
 
       // required to easily identify 'message-wrap' that contains user messages.
       // TODO: remove message-wrap ID as there are multiple message-wraps, so
@@ -43,10 +38,10 @@
       named_id = (msg.type.indexOf("service") > -1) ? "service_message" : "client_message";
 
       output = "<div id=\"message-wrap\" class=" + named_id + ">" +
+                  feedback +
                   "<div class=\"message\">" +
                     "<p>" + msg.data + "</p>" +
                   "</div>" +
-                  feedback +
                 "</div>";
 
       $("#messages").prepend(output);
@@ -54,15 +49,19 @@
 
     // When vote cast send data to server to enable response (update) or question.
     // NOTE: this will only change IFF a down-vote has been cast.
-    $(document).on('click', '.left-arrow, .right-arrow', function (e) {
+    $(document).on('click', '.up-vote, .down-vote', function (e) {
         // Making this available to update it below on response -- sneaky & probably dangerous.
         question_div = $(this).closest('#message-wrap').find('.message');
         // Send relevant data (associated OEQ, rating, previous msg for analysis) to server.
         socket.emit('vote', {
           question: question_div.text(),
-          rating: $(this).attr('class').indexOf("left") > -1 ?  "down": "up",
+          rating: $(this).attr('class').indexOf("down-vote") > -1 ?  "down": "up",
           prev_user_msg : $(this).closest('#messages').find('.client_message:first').text()
         });
+        // IF '.green' exists then remove it before toggling
+        $('.feedback .vote-activated').toggleClass('vote-activated');
+        // Then toggle the current clicked vote button. Votes not retractable.
+        $(this).toggleClass('vote-activated');
         return false;
     });
 
