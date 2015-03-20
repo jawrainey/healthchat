@@ -90,6 +90,12 @@ textarea.form-control { height: 100%; }
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5)
 }
 
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 650px;

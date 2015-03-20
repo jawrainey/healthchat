@@ -12,6 +12,14 @@ def index():
     return render_template('index.html')
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    '''
+    If a 404 occurs: inform the user and redirect them to /about/ in a fun way.
+    '''
+    return render_template('404.html'), 404
+
+
 @socketio.on('user', namespace='/chat')
 def user_received_message(user_message):
     '''
