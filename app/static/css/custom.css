@@ -27,16 +27,16 @@ html {
   padding: 1em 1em 0 1em;
 }
 
-#message-wrap {
+.service_message, .client_message {
   overflow: auto;
   margin-bottom: 1em;
   border: 1px solid #DCDCDC;
   border-radius: 4px;
 }
 
-#message-wrap:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
-#message-wrap:nth-of-type(odd) { background-color: #EEEEEE; border-color: #DCDCDC; }
-#message-wrap:first-child { border-color: #27AE60; }
+.client_message:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
+.service_message:nth-of-type(odd) { background-color: #EEEEEE; border-color: #DCDCDC; }
+.service_message:first-child { border-color: #27AE60; }
 
 /* The right container of the message-wrap div */
 .message {
