@@ -1,8 +1,22 @@
 html {
   position: relative;
   min-height: 100%;
-  color: #434344;
+  font-size: 100%;
 }
+
+body {
+  font: 1em/1.618 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+h1,h2,h3 {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  margin-bottom: .6em;
+}
+
+p { text-align: justify; }
 
 .container {
   position: absolute;
@@ -20,7 +34,7 @@ html {
 }
 
 #messages {
-  border: 1px solid #CECECE;
+  border: 1px solid #CCC;
   border-radius: 4px;
   height: 95%;
   overflow: scroll;
@@ -30,13 +44,12 @@ html {
 .service_message, .client_message {
   overflow: auto;
   margin-bottom: 1em;
-  border: 1px solid #DCDCDC;
+  border: 1px solid #CCC;
   border-radius: 4px;
 }
 
 .client_message:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
-.service_message:nth-of-type(odd) { background-color: #EEEEEE; border-color: #DCDCDC; }
-.service_message:first-child { border-color: #27AE60; }
+.service_message:nth-of-type(odd) { background-color: #EEEEEE; }
 
 /* The right container of the message-wrap div */
 .message {
@@ -54,25 +67,42 @@ html {
 .feedback > p { margin: 0; }
 
 .down-vote:hover, .up-vote:hover {
-  color: #27AE60;
+  color: #FF9D3A;
   z-index: 100001;
   cursor: pointer;
 }
 
-.vote-activated { color: #27AE60; }
+.vote-activated { color: #FF9D3A; }
 
 h1 {
   margin-bottom: 15px;
-  border-bottom: 1px solid #DCDCDC;
+  border-bottom: 1px solid #CCC;
 }
 
 /* Not certain how I feel about this, but showing it is useful for testing. */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-thumb { background-color: #DCDCDC; }
+::-webkit-scrollbar-thumb { background-color: #CCC; }
 
 /* Am unsure if I want to allow vertical scrolling as it would ruin the 'one page' affect. */
 textarea { resize: none; }
-textarea.form-control { height: 100%; }
+
+textarea.form-control,
+textarea.form-control:hover,
+textarea.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.form-control:focus { border: 1px solid #FF9D3A; }
+
+textarea.form-control {
+  height: 100%;
+  font-size: 1em;
+}
+
 #emit { height: 12.5%; }
 
 .btn { padding: 0px 8px; }
@@ -98,6 +128,6 @@ img {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 650px;
+    max-width: 600px;
   }
 }
