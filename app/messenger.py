@@ -27,8 +27,9 @@ class Messenger:
         '''
         import random
         message = random.choice(self.config['initialQuestions'])
-        return ('I would like to take a few minutes to learn about your '
-                'current diet and exercise routines. ' + message)
+        return ('I would like to take a few minutes to learn ' +
+                'current diet and exercise routines, and how they have ' +
+                'impacted your day-to-day routine. ' + message)
 
     def open_ended_question(self, user_message):
         '''
