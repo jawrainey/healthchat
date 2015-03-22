@@ -48,8 +48,8 @@ p { text-align: justify; }
   border-radius: 4px;
 }
 
-.client_message:nth-of-type(even) { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
-.service_message:nth-of-type(odd) { background-color: #EEEEEE; }
+.client_message { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
+.service_message { background-color: #EEEEEE; }
 
 /* The right container of the message-wrap div */
 .message {
