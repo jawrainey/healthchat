@@ -1,0 +1,117 @@
+<div id="feedback">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sus_feedback">Feedback</button>
+</div>
+<div class="modal fade" id="sus_feedback">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title">General feedback</h1>
+        <p>Please select an option where <b>1</b> indicates that you <i>strongly agree</i>
+        with the statement and <b>5</b> indicates that you <i>strongly disagree</i>.</p>
+      </div>
+      <div class="modal-body">
+        <form class="modal-form">
+          <table class="striped-columns border">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I think that I would like to use this website frequently.</td>
+                <td><input type="radio" value="1" name="sus_1"/></td>
+                <td><input type="radio" value="2" name="sus_1"/></td>
+                <td><input type="radio" value="3" name="sus_1"/></td>
+                <td><input type="radio" value="4" name="sus_1"/></td>
+                <td><input type="radio" value="5" name="sus_1"/></td>
+              </tr>
+              <tr>
+                <td>I found the website unnecessarily complex.</td>
+                <td><input type="radio" value="1" name="sus_2"/></td>
+                <td><input type="radio" value="2" name="sus_2"/></td>
+                <td><input type="radio" value="3" name="sus_2"/></td>
+                <td><input type="radio" value="4" name="sus_2"/></td>
+                <td><input type="radio" value="5" name="sus_2"/></td>
+              </tr>
+              <tr>
+                <td>I thought the website was easy to use.</td>
+                <td><input type="radio" value="1" name="sus_3"/></td>
+                <td><input type="radio" value="2" name="sus_3"/></td>
+                <td><input type="radio" value="3" name="sus_3"/></td>
+                <td><input type="radio" value="4" name="sus_3"/></td>
+                <td><input type="radio" value="5" name="sus_3"/></td>
+              </tr>
+              <tr>
+                <td>I think that I would need the support of a technical person to be able to use this website.</td>
+                <td><input type="radio" value="1" name="sus_4"/></td>
+                <td><input type="radio" value="2" name="sus_4"/></td>
+                <td><input type="radio" value="3" name="sus_4"/></td>
+                <td><input type="radio" value="4" name="sus_4"/></td>
+                <td><input type="radio" value="5" name="sus_4"/></td>
+              </tr>
+              <tr>
+                <td>I found the various functions in this website were well integrated.</td>
+                <td><input type="radio" value="1" name="sus_5"/></td>
+                <td><input type="radio" value="2" name="sus_5"/></td>
+                <td><input type="radio" value="3" name="sus_5"/></td>
+                <td><input type="radio" value="4" name="sus_5"/></td>
+                <td><input type="radio" value="5" name="sus_5"/></td>
+              </tr>
+              <tr>
+                <td>I thought there was too much inconsistency in this website.</td>
+                <td><input type="radio" value="1" name="sus_6"/></td>
+                <td><input type="radio" value="2" name="sus_6"/></td>
+                <td><input type="radio" value="3" name="sus_6"/></td>
+                <td><input type="radio" value="4" name="sus_6"/></td>
+                <td><input type="radio" value="5" name="sus_6"/></td>
+              </tr>
+              <tr>
+                <td>I would imagine that most people would learn to use this website very quickly.</td>
+                <td><input type="radio" value="1" name="sus_7"/></td>
+                <td><input type="radio" value="2" name="sus_7"/></td>
+                <td><input type="radio" value="3" name="sus_7"/></td>
+                <td><input type="radio" value="4" name="sus_7"/></td>
+                <td><input type="radio" value="5" name="sus_7"/></td>
+              </tr>
+              <tr>
+                <td>I found the website very cumbersome to use.</td>
+                <td><input type="radio" value="1" name="sus_8"/></td>
+                <td><input type="radio" value="2" name="sus_8"/></td>
+                <td><input type="radio" value="3" name="sus_8"/></td>
+                <td><input type="radio" value="4" name="sus_8"/></td>
+                <td><input type="radio" value="5" name="sus_8"/></td>
+              </tr>
+              <tr>
+                <td>I felt very confident using the website.</td>
+                <td><input type="radio" value="1" name="sus_9"/></td>
+                <td><input type="radio" value="2" name="sus_9"/></td>
+                <td><input type="radio" value="3" name="sus_9"/></td>
+                <td><input type="radio" value="4" name="sus_9"/></td>
+                <td><input type="radio" value="5" name="sus_9"/></td>
+              </tr>
+              <tr>
+                <td>I needed to learn a lot about this website before I could effectively use it.</td>
+                <td><input type="radio" value="1" name="sus_10"/></td>
+                <td><input type="radio" value="2" name="sus_10"/></td>
+                <td><input type="radio" value="3" name="sus_10"/></td>
+                <td><input type="radio" value="4" name="sus_10"/></td>
+                <td><input type="radio" value="5" name="sus_10"/></td>
+              </tr>
+            </tbody>
+          </table>
+          <textarea class="form-control" name="general" placeholder="What general suggestions for site and chat improvements do you suggest?"></textarea>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="sus_submit" type="button" class="btn btn-primary">Submit feedback</button>
+      </div>
+    </div>
+  </div>
+</div>

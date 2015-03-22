@@ -122,6 +122,25 @@ img {
   max-width: 100%;
 }
 
+table {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.modal-header > p { margin: 1em 0 0 0; }
+
+table.striped-columns tbody td:nth-of-type(even),
+table.striped-columns th:nth-of-type(even) {
+  background: #EEEEEE;
+}
+
+table.border td,
+table.border th {
+  border: 1px solid #CCC;
+  width: 100%;
+  padding: .5em
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 600px;
