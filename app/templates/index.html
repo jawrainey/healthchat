@@ -10,6 +10,7 @@
   $(document).ready(function() {
     // explicit package upon connection to prevent global namespace use.
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+
     // emits user input data to server.
     $('form#emit').submit(function(event) {
         socket.emit('user', $('#emit_data').val());
@@ -42,17 +43,13 @@
     // When vote cast send data to server to enable response (update) or question.
     // NOTE: this will only change IFF a down-vote has been cast.
     $(document).on('click', '.up-vote, .down-vote', function (e) {
-        // Making this available to update it below on response -- sneaky & probably dangerous.
-        question_div = $(this).closest('.service_message').find('.message');
         // Send relevant data (associated OEQ, rating, previous msg for analysis) to server.
         socket.emit('vote', {
-          question: question_div.text(),
+          question: $('.service_message').first().text(),
           rating: $(this).attr('class').indexOf("down-vote") > -1 ?  "down": "up",
           prev_user_msg : $(this).closest('#messages').find('.client_message:first').text()
         });
-        // IF '.green' exists then remove it before toggling
         $('.feedback .vote-activated').toggleClass('vote-activated');
-        // Then toggle the current clicked vote button. Votes not retractable.
         $(this).toggleClass('vote-activated');
         return false;
     });
@@ -60,7 +57,7 @@
     // response sent from server to client once a vote has been cast.
     socket.on('vote response', function(msg) {
       // TODO: make it obvious text has changed.
-      question_div.find("p").text(msg.data);
+        $('.service_message').first().find(".message > p").text(msg.data);
     });
 
     // Allow user to press enter to submit message.
