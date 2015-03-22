@@ -51,14 +51,12 @@ p { text-align: justify; }
 .client_message { background-color: #E6F4F9; border-color: #CAE9F3; margin-left: 1em; }
 .service_message { background-color: #EEEEEE; }
 
-/* The right container of the message-wrap div */
 .message {
-  word-wrap: break-word; /* This is important to prevent overflow of text. */
+  word-wrap: break-word; /* Prevents overflow of text. */
   padding: 1em 1em 0 1em;
   overflow: auto;
 }
 
-/* The left container of the message-wrap div */
 .feedback {
   float: left;
   padding: 1em 0 0 .5em;
@@ -79,11 +77,9 @@ h1 {
   border-bottom: 1px solid #CCC;
 }
 
-/* Not certain how I feel about this, but showing it is useful for testing. */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background-color: #CCC; }
 
-/* Am unsure if I want to allow vertical scrolling as it would ruin the 'one page' affect. */
 textarea { resize: none; }
 
 textarea.form-control,
