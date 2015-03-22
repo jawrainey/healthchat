@@ -40,3 +40,15 @@ class Question(db.Model):
     def __repr__(self):
         return 'Concept: question -> rating: %r: %r : %r' \
             % (self.concept, self.question, self.rating)
+
+
+class Feedback(db.Model):
+    '''
+    Stores the results of user feedback:
+        SUS test values, and general feedback.
+    '''
+    __tablename__ = "feedback"
+
+    id = db.Column(db.Integer, nullable=False, unique=True, primary_key=True)
+    sus = db.Column(db.String, nullable=False)
+    general = db.Column(db.String)

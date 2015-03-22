@@ -64,6 +64,20 @@ def on_vote(data):
              {'data': Messenger().open_ended_question(data['prev_user_msg'])})
 
 
+@socketio.on('feedback', namespace='/chat')
+def on_feedback(data):
+    '''
+    Saves user feedback form data to the database for later review.
+
+    Args:
+        data (dict): stores the System Usability Scale (SUS) results, and the
+        results for a free-form general feedback.
+    '''
+    db.session.add(models.Feedback(sus=data['sus'], general=data['general']))
+    db.session.commit()
+    # TODO: respond with a 'thanks for submitting feedback...'
+
+
 def __cast_vote(_question, _rating):
     '''
     Updates the rating of a question voted for by a user.
