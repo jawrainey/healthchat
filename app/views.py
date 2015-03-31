@@ -12,6 +12,15 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/about')
+def about():
+    '''
+    Contains detailed information on the project, including:
+        application purpose, user participation, instructions, & privacy policy.
+    '''
+    return render_template('about.html')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     '''
