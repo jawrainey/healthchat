@@ -105,9 +105,8 @@ textarea.form-control {
 
 #feedback {
   top: 50%;
-  left: -2.5%;
+  left: -4.5%;
   position: absolute;
-  z-index: 100000;
 
   -webkit-transform:rotate(-90deg);
   -moz-transform:rotate(-90deg);
