@@ -1,5 +1,10 @@
 <div id="feedback">
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sus_feedback">Feedback</button>
+  {% if request.endpoint == 'index' %}
+    <a href="/about"><button type="button" class="btn btn-primary btn-lg">About</button></a>
+  {% else %}
+    <a href="/"><button type="button" class="btn btn-primary btn-lg">Chat</button></a>
+  {% endif %}
 </div>
 <div class="modal fade" id="sus_feedback">
   <div class="modal-dialog modal-lg">
