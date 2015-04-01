@@ -54,12 +54,25 @@
     });
 
     $(document).on('click', '#sus_submit', function (e) {
-        // TODO: form validation -- all 10 questions must be answered.
+        // TODO: form validation on server side instead.
         var sus = [];
+        var errors = [];
+
         for(count = 1; count <= 10; count++)
-          sus.push($('input:radio[name=sus_' + count + ']:checked').val());
-        socket.emit('feedback', {'sus': sus.toString(), 'general': $('textarea[name=general]').val()});
-        $('#sus_feedback').modal('hide');
+        {
+          val = $('input:radio[name=sus_' + count + ']:checked').val();
+          if (typeof val === "undefined") errors.push(count); else sus.push(val);
+        }
+        if (errors.length > 0)
+        {
+          $('.errors').remove();
+          $('.modal-header').append('<p class="errors">The following questions are incomplete: <b>' + errors.toString() + '</b></p>');
+        }
+        else
+        {
+          socket.emit('feedback', {'sus': sus.toString(), 'general': $('textarea[name=general]').val()});
+          $('#sus_feedback').modal('hide');
+        }
     });
 
     // response sent from server to client once a vote has been cast.
