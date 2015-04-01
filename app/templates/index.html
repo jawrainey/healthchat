@@ -60,11 +60,7 @@
           sus.push($('input:radio[name=sus_' + count + ']:checked').val());
         socket.emit('feedback', {'sus': sus.toString(), 'general': $('textarea[name=general]').val()});
         $('#sus_feedback').modal('hide');
-        // we want to show to allow them to re-submit or change their opinion
-        $('#feedback').show();
     });
-
-    $('#sus_feedback').on('shown.bs.modal', function () { $('#feedback').hide(); });
 
     // response sent from server to client once a vote has been cast.
     socket.on('vote response', function(msg) {
