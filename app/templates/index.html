@@ -77,8 +77,11 @@
 
     // response sent from server to client once a vote has been cast.
     socket.on('vote response', function(msg) {
-      // TODO: make it obvious text has changed.
-        $('.service_message').first().find(".message > p").text(msg.data);
+      obj = $('.service_message').first().find(".message > p");
+      // Prevents fade if message does not change.
+      if (obj.text() == msg.data) return;
+      // Fade new message over previous to make it obvious it's changed.
+      obj.fadeOut(function() { $(this).text(msg.data).fadeIn(200); });
     });
 
     // Allow user to press enter to submit message.
