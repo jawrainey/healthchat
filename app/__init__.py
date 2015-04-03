@@ -1,17 +1,28 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.socketio import SocketIO
-import os
 
-# The main application folder
-_basedir = os.path.abspath(os.path.dirname('..'))
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'test.db')
+socketio = SocketIO()
+db = SQLAlchemy()
 
-app = Flask(__name__)
-app.debug = True
-app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 
-socketio = SocketIO(app)
-db = SQLAlchemy(app)
+def create_app(config):
+    """
+    Creates a flask app application factory to not bundle extensions, which
+    enables multiple instances to be used with different configurations (tests).
 
-from app import views, models
+    Args:
+        config (object): The configuration object to use.
+
+    Returns:
+        app (object): The Python Flask object.
+    """
+    app = Flask(__name__)
+    app.config.from_object(config)
+    socketio.init_app(app)
+    db.init_app(app)
+
+    from app.views import main
+    app.register_blueprint(main)
+
+    return app

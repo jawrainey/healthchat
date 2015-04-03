@@ -1,10 +1,13 @@
-from flask import render_template, request
+from flask import render_template, request, Blueprint
 from flask.ext.socketio import emit
 from messenger import Messenger
-from app import app, db, models, socketio
+from app import db, models, socketio
+
+# Abstraction required to create an application factory.
+main = Blueprint('main', __name__)
 
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     Homepage of website that contains the chat application.
@@ -12,7 +15,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/about')
+@main.route('/about')
 def about():
     '''
     Contains detailed information on the project, including:
@@ -21,7 +24,7 @@ def about():
     return render_template('about.html')
 
 
-@app.errorhandler(404)
+@main.errorhandler(404)
 def page_not_found(e):
     '''
     If a 404 occurs: inform the user and redirect them to /about/ in a fun way.
