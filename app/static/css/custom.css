@@ -80,11 +80,9 @@ h1 {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background-color: #CCC; }
 
-textarea { resize: none; }
-
-textarea.form-control,
-textarea.form-control:hover,
-textarea.form-control:focus {
+#user_message,
+#user_message:hover,
+#user_message:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -92,14 +90,14 @@ textarea.form-control:focus {
   -webkit-transition: none;
 }
 
-.form-control:focus { border: 1px solid #FF9D3A; }
+#user_message:focus { border: 1px solid #FF9D3A; }
 
-textarea.form-control {
+#user_message {
+  resize: none;
   height: 100%;
   font-size: 1em;
+  height: 12.5%;
 }
-
-#emit { height: 12.5%; }
 
 .btn { padding: 0px 8px; }
 

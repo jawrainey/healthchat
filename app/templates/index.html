@@ -9,19 +9,11 @@
     // explicit package upon connection to prevent global namespace use.
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
-    // emits user input data to server.
-    $('form#emit').submit(function(event) {
-        socket.emit('user', $('#emit_data').val());
-        return false;
-    });
-
     // Allow user to press enter to submit message.
-    // TODO: currently using blur to deselect form.
-    // Need a way to reset it without leaving newline in textarea.
-    // blur currently works, but then user has to reselect form -- bad UX.
-    $('form#emit').keypress(function(e) {
+    $('#user_message').keypress(function(e) {
       if (e.which == 13 && !e.shiftKey) {
-        $('#emit').submit();
+        // emits user input data to server.
+        socket.emit('user', $('#user_message').val());
         $('textarea').blur().val('');
       }
     });
@@ -101,9 +93,7 @@
 {% block content %}
   <div class="container">
     <h1>Health chat</h1>
-    <form id="emit" class="form" method="POST" action='#'>
-      <textarea id="emit_data" class="form-control" placeholder="Type your response here and press enter to submit your message."></textarea>
-    </form>
+    <textarea id="user_message" class="form-control" placeholder="Type your response here and press enter to submit your message."></textarea>
   </div>
   <footer class="footer">
     <div class="container">
