@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Health chat &middot; How can I help?{% endblock %}
+{% block content %}
+  <div class="container">
+    <h1>Health chat</h1>
+    <textarea id="user_message" class="form-control" placeholder="Type your response here and press enter to submit your message."></textarea>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div id="messages"></div>
+    </div>
+  </footer>
+  {% include 'modal.html' %}
+{%- endblock %}
