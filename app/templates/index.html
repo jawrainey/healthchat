@@ -15,6 +15,17 @@
         return false;
     });
 
+    // Allow user to press enter to submit message.
+    // TODO: currently using blur to deselect form.
+    // Need a way to reset it without leaving newline in textarea.
+    // blur currently works, but then user has to reselect form -- bad UX.
+    $('form#emit').keypress(function(e) {
+      if (e.which == 13 && !e.shiftKey) {
+        $('#emit').submit();
+        $('textarea').blur().val('');
+      }
+    });
+
     // response sent from server; user message sent to output on screen.
     socket.on('response', function(msg) {
       // Only the topmost feedback div (like/dislike) should exist.
@@ -53,6 +64,15 @@
         return false;
     });
 
+    // response sent from server to client once a vote has been cast.
+    socket.on('vote response', function(msg) {
+      obj = $('.service_message').first().find(".message > p");
+      // Prevents fade if message does not change.
+      if (obj.text() == msg.data) return;
+      // Fade new message over previous to make it obvious it's changed.
+      obj.fadeOut(function() { $(this).text(msg.data).fadeIn(200); });
+    });
+
     $(document).on('click', '#sus_submit', function (e) {
         // TODO: form validation on server side instead.
         var sus = [];
@@ -73,26 +93,6 @@
           socket.emit('feedback', {'sus': sus.toString(), 'general': $('textarea[name=general]').val()});
           $('#sus_feedback').modal('hide');
         }
-    });
-
-    // response sent from server to client once a vote has been cast.
-    socket.on('vote response', function(msg) {
-      obj = $('.service_message').first().find(".message > p");
-      // Prevents fade if message does not change.
-      if (obj.text() == msg.data) return;
-      // Fade new message over previous to make it obvious it's changed.
-      obj.fadeOut(function() { $(this).text(msg.data).fadeIn(200); });
-    });
-
-    // Allow user to press enter to submit message.
-    // TODO: currently using blur to deselect form.
-    // Need a way to reset it without leaving newline in textarea.
-    // blur currently works, but then user has to reselect form -- bad UX.
-    $('form#emit').keypress(function(e) {
-      if (e.which == 13 && !e.shiftKey) {
-        $('#emit').submit();
-        $('textarea').blur().val('');
-      }
     });
 
   });
