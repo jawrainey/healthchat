@@ -12,7 +12,7 @@ This novel application attempts to address this issue by providing an online cou
 
 An ontological driven conversational agent that converses with users on defined subjects (i.e. from the ontology), which in this case is exercise and diet (health).
 
-The aim of this project is to use Brief Motiviational Intervention ([BMI](http://journals.lww.com/jtrauma/Fulltext/2005/09001/Brief_Motivational_Interventions__An_Introduction.8.aspx)) techniques when conversering with the user in an attempt to elicit behaviour change. At the very least, the system aims to help users understand the impact of their health choices through their own personal reflection.
+The aim of this project is to use Brief Motivational Intervention ([BMI](http://journals.lww.com/jtrauma/Fulltext/2005/09001/Brief_Motivational_Interventions__An_Introduction.8.aspx)) techniques when chatting with the user in an attempt to illicit behaviour change. At the very least, the system aims to help users understand the impact of their health choices through their own personal reflection.
 
 ## Main objects
 
@@ -28,5 +28,5 @@ My main areas of focus when undertaking this project were to develop solutions t
 
 ## Contribution
 
-All contributions, ideas and suggestions
+All contributions, ideas, and suggestions
 are welcomed via [issues](https://github.com/jawrainey/healthchat/issues) and [pull requests](https://github.com/jawrainey/healthchat/pulls).
