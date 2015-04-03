@@ -1,7 +1,8 @@
 # Note: based on - http://blog.adimian.com/2014/10/cte-and-closure-tables/
 import sqlite3
+import settings
 
-conn = sqlite3.connect('/Users/jawrainey/Dropbox/uni/04/CM3203/healthchat/test.db')
+conn = sqlite3.connect(settings.DevConfig.LOCAL_DB_PATH)
 cursor = conn.cursor()
 
 
@@ -14,8 +15,7 @@ def populate_from_obo():
     '''
     import obo
     # Note: structure.obo MUST contain the initial concepts.
-    # TODO: move structure.obo to environmental variable.
-    path = '/Users/jawrainey/Dropbox/uni/04/CM3203/healthchat/data/structure.obo'
+    path = settings.Config.DATA_FOLER + 'structure.obo'
     obo_content = [i for i in obo.Parser(path)]
 
     known_ids = [r[0] for r in
