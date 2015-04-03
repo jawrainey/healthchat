@@ -2,3 +2,4 @@ Flask==0.10.1
 Flask-SocketIO
 Flask-SQLAlchemy==1.0
 nltk==3.0.0
+gunicorn==0.16.1
