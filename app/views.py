@@ -47,8 +47,10 @@ def user_received_message(user_message):
     emit('response', {'type': 'service', 'data': open_ended_question})
 
     cid = request.namespace.socket.sessid  # current conversation id
-    db.session.add(models.Message('received', user_message, cid))
-    db.session.add(models.Message('service', open_ended_question, cid))
+    db.session.add(models.Message(
+        status='received', content=user_message, conversation_id=cid))
+    db.session.add(models.Message(
+        status='service', content=open_ended_question, conversation_id=cid))
     db.session.commit()
 
 

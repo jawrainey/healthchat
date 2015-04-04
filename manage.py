@@ -78,11 +78,13 @@ def __populate_from_obo():
 def questions_to_sql():
     '''
     Reads the pre-defined OEQ responses, and saves them to the database.
+    All questions start at the same rating (1) as they are all initially great.
     '''
     messages = messenger.Messenger().config['responses']
     for concept, questions in messages.iteritems():
         for question in questions:
-            db.session.add(models.Question(question, concept, 1))
+            db.session.add(models.Question(
+                question=question, concept=concept, rating=1))
     db.session.commit()
 
 
