@@ -18,7 +18,6 @@ class ProdConfig(Config):
         Config (object): Inherit the default shared configuration settings.
     """
     DEBUG = False
-    ENV = 'prod'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', None),
 
 
@@ -30,6 +29,5 @@ class DevConfig(Config):
         Config (object): Inherit the default shared configuration settings.
     """
     DEBUG = True
-    ENV = 'dev'
     LOCAL_DB_PATH = os.path.join(Config.PROJECT_ROOT, 'dev.db')
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(LOCAL_DB_PATH)
