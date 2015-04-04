@@ -18,7 +18,7 @@ class ProdConfig(Config):
         Config (object): Inherit the default shared configuration settings.
     """
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', None),
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', None)
 
 
 class DevConfig(Config):
