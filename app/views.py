@@ -24,7 +24,7 @@ def about():
     return render_template('about.html')
 
 
-@main.errorhandler(404)
+@main.app_errorhandler(404)
 def page_not_found(e):
     '''
     If a 404 occurs: inform the user and redirect them to /about/ in a fun way.
