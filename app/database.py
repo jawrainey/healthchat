@@ -1,4 +1,4 @@
-from app import db
+from app import db, models
 
 
 class Database:
@@ -23,9 +23,9 @@ class Database:
         '''
         from nltk import SnowballStemmer
         concept = SnowballStemmer("english").stem(str(concept))
-        query = "SELECT id FROM nodes WHERE name LIKE '%" + concept + "%'"
-        row = db.engine.execute(query).fetchone()
-        return row[0] if row else None
+        row = models.Nodes.query.filter(
+            models.Nodes.name.like("%" + concept + "%")).first()
+        return row.id
 
     def parent_name(self, parent_id):
         '''
@@ -37,9 +37,8 @@ class Database:
         Returns:
             str: name of parent concept based on ID, otherwise None
         '''
-        query = 'SELECT name FROM nodes WHERE id = ' + str(parent_id)
-        row = db.engine.execute(query).fetchone()
-        return row[0] if row else None
+        row = models.Nodes.query.filter_by(id=str(parent_id)).first()
+        return row.name
 
     def get_subtree_of_concept(self, concept_id):
         '''
@@ -55,22 +54,3 @@ class Database:
                  'JOIN closure a ON (n.id = a.child) '
                  'WHERE a.parent = ' + str(concept_id))
         return db.engine.execute(query).fetchall()
-
-    def create_tables(self):
-        '''
-        Creates the two tables used to store the ontology concepts and terms.
-            - 'nodes' stores the .obo content.
-            - 'closure' stores the hierarchy as a transitive representation.
-        '''
-        db.engine.execute(
-            'CREATE TABLE IF NOT EXISTS nodes ('
-            'id INTEGER NOT NULL PRIMARY KEY,'
-            'parent INTEGER REFERENCES nodes(id),'
-            'name VARCHAR(100))')
-
-        db.engine.execute(
-            'CREATE TABLE IF NOT EXISTS closure ('
-            'parent INTEGER REFERENCES nodes(id), '
-            'child INTEGER REFERENCES nodes(id), '
-            'depth INTEGER)')
-        db.session.commit()

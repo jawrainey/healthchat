@@ -10,12 +10,12 @@ class Message(db.Model):
     id = db.Column(db.Integer, nullable=False, unique=True, primary_key=True)
     status = db.Column(db.String, nullable=False)
     content = db.Column(db.String, nullable=False)
-    conversation_id = db.Column(db.Integer, nullable=False)
+    conversation_id = db.Column(db.String, nullable=False)
 
     def __init__(self, _status, _content, _conversation_id):
         self.status = _status  # differentiate between sent/received.
         self.content = _content
-        self.conversation_id = _conversation_id  # diff questions sent.
+        self.conversation_id = str(_conversation_id)  # diff questions sent.
 
     def __repr__(self):
         return 'Message & type: %r, -> %r.' % (self.content, self.status)
@@ -52,3 +52,21 @@ class Feedback(db.Model):
     id = db.Column(db.Integer, nullable=False, unique=True, primary_key=True)
     sus = db.Column(db.String, nullable=False)
     general = db.Column(db.String)
+
+
+class Nodes(db.Model):
+    __tablename__ = 'nodes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    parent = db.Column(db.Integer, db.ForeignKey('nodes.id'), nullable=False)
+    name = db.Column(db.String)
+    parent_id = db.relationship('Nodes', foreign_keys='Nodes.parent')
+
+
+class Closure(db.Model):
+    __tablename__ = 'closure'
+
+    id = db.Column(db.Integer, primary_key=True)
+    parent = db.Column(db.Integer, db.ForeignKey('nodes.id'))
+    child = db.Column(db.Integer, db.ForeignKey('nodes.id'))
+    depth = db.Column(db.Integer)

@@ -19,9 +19,6 @@ def init_db():
     '''
     Note: not using Flask-Script as I need to run socketio below.
     '''
-    from app import database
-    database.Database().create_tables()
-    # creating afterwards as the database class is more likely to throw errors.
     db.drop_all()
     db.create_all()
     db.session.commit()
@@ -54,24 +51,28 @@ def __populate_from_obo():
 
     for i in obo_content:
         _id = int(str(i.tags['id'][0]).split(':')[1])
-        # The root element does not have a parent. Assign it a zero.
+        # The root element does not have a parent.
+        # Assign it a one as PostgreSQL does not accept zero (no parent).
         _pid = (int(str(i.tags['is_a'][0]).split(':')[1])
-                if 'is_a' in str(i) else 0)
+                if 'is_a' in str(i) else 1)
         _name = str(i.tags['name'][0])
         # Only add NEW terms to the database.
         if _id not in known_ids:
+            from app import models
+            node = models.Nodes(id=_id, parent=_pid, name=_name)
+            db.session.add(node)
+            db.session.commit()
             # Add ontological term to node table.
-            last_id = db.engine.execute('INSERT INTO nodes VALUES (?, ?, ?)',
-                                        (_id, _pid, _name)).lastrowid
             # Collect ancestor of parent, and insert into closure table.
-            values = db.engine.execute(
-                'SELECT parent, ? as child, depth+1 FROM closure '
-                'WHERE child = ?', (_id, _pid)).fetchall()
-            stm = 'INSERT INTO closure (parent, child, depth) VALUES (?, ?, ?)'
+            values = [(i.parent, _id, i.depth + 1)
+                      for i in models.Closure.query.filter_by(child=_pid).all()]
             for i in values:
-                db.engine.execute(stm, i)
-            db.engine.execute(stm, (last_id, last_id, 0))
-    db.session.commit()
+                db.session.add(
+                    models.Closure(parent=i[0], child=i[1], depth=i[2]))
+                db.session.commit()
+            db.session.add(
+                models.Closure(parent=node.id, child=node.id, depth=0))
+            db.session.commit()
 
 
 @manager.command
