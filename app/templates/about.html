@@ -4,9 +4,8 @@
   <div class="container">
     <h1>What is <i>health chat</i>?</h1>
     <p>A final year project developed by <a href="https://twitter.com/jawrainey/">Jay Rainey</a>
-    that provides autonomous advice on health, diet and exercise. The intent of
-    this chat server is to make users reflect upon, and consider the health
-    implications of their diet and exercise choices.</p>
+    that chats autonomously with users regarding health, diet and exercise. The intent of
+    this chat server is to invoke user reflection, and consider the health implications of their diet and exercise choices.</p>
     <p>The <i>focus</i> of this application is the adherence to
     <a href="http://journals.lww.com/jtrauma/Fulltext/2005/09001/Brief_Motivational_Interventions__An_Introduction.8.aspx">
     Brief Motivational Intervention (BMI)</a> techniques for the conversational structure in the responses generated.</p>
@@ -16,21 +15,21 @@
       <li>You respond to a message from the chat application.</li>
       <li>The server splits the message by words, and compares each
       <a href="http://en.wikipedia.org/wiki/Stemming">stemmed</a> word with the
-      current knowledge-base to determine the message context.</li>
-      <li>The most frequent concept is used to select the <i>best rated </i>
+      current knowledge base to determine the message context.</li>
+      <li>The most frequent concept is used to select the <i>best-rated </i>
       <a href="https://github.com/jawrainey/healthchat/blob/master/data/questions.json#L11-L105">response</a>.</li>
     </ol>
     <h2>How you can help</h2>
     <p><b>Three</b> aspects of the system can be improved by <i>your</i> participation:</p>
     <h3>1. Context detection</h3>
-    <p>Each message you send is stored and used to improve the knowledge-base,
+    <p>Each message you send is stored and used to improve the knowledge base,
     and context detection. To contribute, write detailed responses during conversation.</p>
     <h3>2. Responses generated</h3>
-    <p>Each message sent by the application can be rated by <i>you</i>, which is used internally
+    <p>You can rate each message sent by the application, which is used internally
     to select the <i>most appropriate</i> responses for yourself and other users.</p>
     <ul>
       <li><b>Up-votes:</b> increases the rating of a question.</li>
-      <li><b>Down-votes:</b> decreases rating <b>and</b> a more appropriate response is selected.</li>
+      <li><b>Down-votes:</b> decreases rating <b>and</b> a more appropriate response selected.</li>
     </ul>
     <h3>3. General feedback &amp; website design</h3>
     <p>If you have any issues with the site, or would like to suggest
