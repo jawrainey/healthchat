@@ -25,7 +25,7 @@ class Database:
         concept = SnowballStemmer("english").stem(str(concept))
         row = models.Nodes.query.filter(
             models.Nodes.name.like("%" + concept + "%")).first()
-        return row.id
+        return row.id if row else None
 
     def parent_name(self, parent_id):
         '''
@@ -38,7 +38,7 @@ class Database:
             str: name of parent concept based on ID, otherwise None
         '''
         row = models.Nodes.query.filter_by(id=str(parent_id)).first()
-        return row.name
+        return row.name if row else None
 
     def get_subtree_of_concept(self, concept_id):
         '''
