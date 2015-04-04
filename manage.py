@@ -46,8 +46,8 @@ def __populate_from_obo():
     path = DevConfig.DATA_FOLER + 'structure.obo'
     obo_content = [i for i in obo.Parser(path)]
 
-    known_ids = [r[0] for r in
-                 db.engine.execute('SELECT id FROM nodes').fetchall()]
+    from app import models
+    known_ids = [tup[0] for tup in db.session.query(models.Nodes.id).all()]
 
     for i in obo_content:
         _id = int(str(i.tags['id'][0]).split(':')[1])
@@ -58,7 +58,6 @@ def __populate_from_obo():
         _name = str(i.tags['name'][0])
         # Only add NEW terms to the database.
         if _id not in known_ids:
-            from app import models
             node = models.Nodes(id=_id, parent=_pid, name=_name)
             db.session.add(node)
             db.session.commit()
