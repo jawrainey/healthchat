@@ -76,9 +76,9 @@ h1 {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background-color: #CCC; }
 
-#user_message,
-#user_message:hover,
-#user_message:focus {
+.form-control,
+.form-control:hover,
+.form-control:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -86,8 +86,9 @@ h1 {
   -webkit-transition: none;
 }
 
-#user_message:focus { border: 1px solid #FF9D3A; }
+.form-control:focus { border: 1px solid #FF9D3A; }
 
+.form-control,
 #user_message {
   resize: none;
   font-size: 1em;
