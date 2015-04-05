@@ -128,6 +128,8 @@ table.border th {
   padding: .5em
 }
 
+.errors { color: #A94442; }
+
 @media (min-width: 1200px) {
   .container {
     max-width: 600px;
