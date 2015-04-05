@@ -12,7 +12,7 @@ This novel application provides a chat service where users can openly discuss th
 
 My main objects of this project were to develop solutions to:
 
-1. Construction of a domain-specific ontology from freely available data, such as [research data](https://www.todo.com) or data scrapped from [domain-specific websites](https://www.reddit.com/r/food/).
+1. Construction of a domain-specific ontology from freely available data, such as [research data](http://bioportal.bioontology.org/ontologies/RH-MESH/) or data scrapped from [domain-specific websites](https://www.reddit.com/r/food/).
 2. Development and implement an ontology to facilitate appropriate response selection and context detection from user messages.
 3. Development of a web-based interface to demonstrate and test the utility and usability of the conversational agent and user experience.
 
