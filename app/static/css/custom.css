@@ -24,21 +24,17 @@ p { text-align: justify; }
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 75%;
+  margin-bottom: 1em;
+  max-height: 87.5%;
 }
 
 #messages {
   border: 1px solid #CCC;
   border-radius: 4px;
-  height: 95%;
-  overflow: scroll;
+  height: 75%;
+  overflow: overlay;
   padding: 1em 1em 0 1em;
+  margin-bottom: 1em;
 }
 
 .service_message, .client_message {
@@ -94,23 +90,17 @@ h1 {
 
 #user_message {
   resize: none;
-  height: 100%;
   font-size: 1em;
-  height: 12.5%;
+  margin-bottom: 1em;
+  height: 15%;
 }
 
-.btn { padding: 0px 8px; }
+nav { float: right; }
+nav { margin-bottom: .404em; }
 
-#feedback {
-  top: 50%;
-  left: -4.5%;
-  position: absolute;
-
-  -webkit-transform:rotate(-90deg);
-  -moz-transform:rotate(-90deg);
-  -o-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5)
+nav li {
+  display: inline;
+  padding-left: .809em;
 }
 
 img {

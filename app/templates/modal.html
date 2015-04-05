@@ -1,11 +1,13 @@
-<div id="feedback">
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sus_feedback">Feedback</button>
+<nav>
+  <ul>
+    <li><a href="#sus_feedback" data-toggle="modal" data-target="#sus_feedback">Provide feedback</a></li>
   {%- if request.endpoint == 'main.index' %}
-    <a href="/about"><button type="button" class="btn btn-primary btn-lg">About</button></a>
+    <li><a href="/about">About the chat</a></li>
   {% else %}
-    <a href="/"><button type="button" class="btn btn-primary btn-lg">Chat</button></a>
+    <li><a href="/">Fancy a chat?</a></li>
   {% endif -%}
-</div>
+  </ul>
+</nav>
 <div class="modal fade" id="sus_feedback">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
