@@ -1,9 +1,3 @@
-format-version: 1.2
-date: 20:02:2015 16:20
-saved-by: jawrainey
-auto-generated-by: OBO-Edit 2.3.1
-default-namespace: file:/Users/jawrainey/Dropbox/uni/04/CM3203/project/data/structure.obo
-
 [Term]
 id: ID:1
 name: health
