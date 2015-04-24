@@ -4,10 +4,10 @@ from messenger import Messenger
 from app import db, models, socketio
 
 # Abstraction required to create an application factory.
-main = Blueprint('main', __name__)
+chat = Blueprint('chat', __name__)
 
 
-@main.route('/')
+@chat.route('/')
 def index():
     '''
     Homepage of website that contains the chat application.
@@ -15,7 +15,7 @@ def index():
     return render_template('index.html')
 
 
-@main.route('/about')
+@chat.route('/about')
 def about():
     '''
     Contains detailed information on the project, including:
@@ -24,7 +24,7 @@ def about():
     return render_template('about.html')
 
 
-@main.app_errorhandler(404)
+@chat.app_errorhandler(404)
 def page_not_found(e):
     '''
     If a 404 occurs: inform the user and redirect them to /about/ in a fun way.

@@ -32,7 +32,7 @@
       }
     });
 
-    {% if request.endpoint == 'main.index' %}
+    {% if request.endpoint == 'chat.index' %}
     // Allow user to press enter to submit message.
     $('#user_message').keypress(function(e) {
       if (e.which == 13 && !e.shiftKey) {

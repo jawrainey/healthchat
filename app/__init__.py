@@ -23,7 +23,7 @@ def create_app(config):
     socketio.init_app(app)
     db.init_app(app)
 
-    from app.views import main
-    app.register_blueprint(main)
+    from app.views import chat
+    app.register_blueprint(chat)
 
     return app
