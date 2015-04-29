@@ -34,6 +34,15 @@ def populate_ontology():
 
 
 @manager.command
+def update_ontology():
+    '''
+    Manually assign children to parent terms.
+    '''
+    from utilities import Utils
+    Utils().assign_terms_to_obo_file()
+
+
+@manager.command
 def questions_to_sql():
     '''
     Saves pre-defined responses to database with rating 1.
