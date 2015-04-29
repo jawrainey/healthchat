@@ -18,11 +18,10 @@ class Utils:
         import datetime
 
         # The sub-reddits where we obtain our primary data. Keys are concepts.
-        subreddits = {
-            'exercise': ['bicycling', 'bodyweightfitness',
-                         'fitness', 'loseit', 'running'],
-            'diet': ['cooking', 'eatcheapandhealthy',
-                     'food', 'keto', 'slowcooking']}
+        subreddits = {'exercise': ['bicycling', 'bodyweightfitness',
+                                   'fitness', 'loseit', 'running'],
+                      'diet': ['cooking', 'eatcheapandhealthy',
+                               'food', 'keto', 'slowcooking']}
 
         r = praw.Reddit('Ontological data collection -- @jawrainey.')
         # Required to bypass unauthorised download limit of 25 comments.
@@ -38,7 +37,7 @@ class Utils:
 
     def assign_terms_to_obo_file(self):
         '''
-        Step 2: manually assign each unknown word from the reddit frequency file
+        Step 2: manually assign each unknown word from the reddit word dataset
                 to an associated concept for this term in the ontology.
 
         Note: this method works on the assumption that there exists an OBO file
@@ -52,11 +51,11 @@ class Utils:
         import obo
         # The words in all reddit files that does not exist in known words.
         unknown_words = self.__diff_known_words(self.__reddit_data())
-        # The concepts in the current ontology
+        # The concepts in the current ontology.
         obo_content = [i for i in obo.Parser(Config.ONTOLOGY)]
         # Prevents re-calculated later, which would be memory/time intensive.
         known_concepts = [str(i.tags['name'][0]) for i in obo_content]
-        # Used to increment the ID
+        # Used to increment the ID.
         last_id = int(str(obo_content[-1].tags['id'][0]).split(':')[1])
 
         # add each word to the OBO file for the related concept.
@@ -118,7 +117,7 @@ class Utils:
 
     def __reddit_data(self):
         '''
-        Generates the frequency for all scraped reddit file and saves this
+        Generates a set of words for all scraped reddit file and saves this
         into a list (memory) rather than file for simplicity.
 
         Returns:
