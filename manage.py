@@ -17,7 +17,7 @@ manager = Manager(app)
 @manager.command
 def init_db():
     '''
-    Note: not using Flask-Script as I need to run socketio below.
+    Create initial database tables.
     '''
     db.drop_all()
     db.create_all()
@@ -27,7 +27,7 @@ def init_db():
 @manager.command
 def populate_ontology():
     '''
-    Add the initial ontology data (from pre-defined data) to the database.
+    Add the initial ontology data to the database.
     '''
     from utilities import Utils
     Utils().populate_db_from_obo_file()
@@ -36,8 +36,7 @@ def populate_ontology():
 @manager.command
 def questions_to_sql():
     '''
-    Reads the pre-defined OEQ responses, and saves them to the database.
-    All questions start at the same rating (1) as they are all initially great.
+    Saves pre-defined responses to database with rating 1.
     '''
     messages = messenger.Messenger().config['responses']
     for concept, questions in messages.iteritems():
