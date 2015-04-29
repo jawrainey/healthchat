@@ -84,7 +84,7 @@ class Utils:
         Step 3: Inserts the contents of the obo file (concepts/terms) to a
                 transitive closure RDBMS representation for querying of system.
         '''
-        from utils import obo
+        import obo
         from app import db
         # Note: structure.obo MUST contain the initial concepts.
         obo_content = [i for i in obo.Parser(Config.ONTOLOGY)]
