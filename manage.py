@@ -47,7 +47,10 @@ def questions_to_sql():
 
 
 @manager.command
-def serve():
+def runserver():
+    '''
+    Required to run socketio rather than default manager.
+    '''
     socketio.run(app)
 
 if __name__ == '__main__':
