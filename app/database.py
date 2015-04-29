@@ -27,18 +27,25 @@ class Database:
             models.Nodes.name.like("%" + concept + "%")).first()
         return row.id if row else None
 
-    def parent_name(self, parent_id):
+    def parent_name(self, term_id):
         '''
-        Obtains the name of a concept based on the ID.
+        Obtains the parent name and id of a concept based on the ID.
 
         Args:
-            parent_id (str): the ID of the parent to search for.
+            term_id (str): the ID of the parent to search for.
 
         Returns:
-            str: name of parent concept based on ID, otherwise None
+            str: parent name based on term ID, otherwise None
         '''
-        row = models.Nodes.query.filter_by(id=str(parent_id)).first()
-        return row.name if row else None
+        # Obtains the node for the term, e.g. id, parent, name => (22, 5, apple)
+        row = models.Nodes.query.filter_by(id=str(term_id)).first()
+        if row:
+            # Obtains the parent name for the parent ID of the above row.
+            # Performing another query reduces the need for a complex join.
+            parent = models.Nodes.query.filter_by(id=str(row.parent)).first()
+            return parent.name
+        else:
+            return None
 
     def get_subtree_of_concept(self, concept_id):
         '''

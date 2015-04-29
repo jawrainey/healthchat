@@ -148,8 +148,7 @@ class Messenger:
         for term in terms:
             concept = self.db.concept_id(term)
             if concept:
-                parent_id = self.db.get_subtree_of_concept(concept)[0][1]
-                parent_name = self.db.parent_name(parent_id)
+                parent_name = self.db.parent_name(concept)
                 # Prevents issue of detecting concepts without related questions
                 # e.g. without 'parent' concept (health, diet, exercise, etc.)
                 concepts = set([i.concept for i in models.Question.query.all()])
