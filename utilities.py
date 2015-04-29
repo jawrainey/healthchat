@@ -57,26 +57,37 @@ class Utils:
         known_concepts = [str(i.tags['name'][0]) for i in obo_content]
         # Used to increment the ID.
         last_id = int(str(obo_content[-1].tags['id'][0]).split(':')[1])
+        # Also used to open file for writing later.
+        known_words_file = Config.DATA_FOLER + 'known_words.txt'
 
-        # add each word to the OBO file for the related concept.
+        # Read known words to reduce size later.
+        known_words = ''
+        with open(known_words_file, 'r') as f:
+            known_words += f.read()
+
+        # Add each word to the OBO file for the related concept.
         with open(Config.ONTOLOGY, 'a') as f:
             for word in unknown_words:
-                if word not in known_concepts:  # Do not add concept twice.
+                if word not in known_concepts or \
+                        word not in known_words.split():
+
                     concepts = raw_input(
                         'Select a concept for %s from:\n%s or "skip"\n'
                         % (word, ', '.join(known_concepts[2:18])))
+
                     if 'skip' not in concepts:
                         concepts = [i.strip() for i in concepts.split(',')]
                         last_id += 1
                         f.write(term % (last_id, word))
-                        # Add relationship. May consist of be many concepts.
-                        for concept in concepts:
+                        for concept in concepts:  # Add relationship(s).
                             is_a_id = self.__get_concept_id(
                                 obo_content, concept)
                             f.write(('is_a: ID:%s ! %s\n') % (is_a_id, concept))
+                    else:
+                        with open(known_words_file, 'a') as kwf:
+                            kwf.write(word + '\n')
                 else:
-                    print ('%s already exists in ontology.' % word)
-            return 0
+                    print ('%s exists in ontology or known words file.' % word)
 
     def populate_db_from_obo_file(self):
         '''
