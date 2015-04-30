@@ -46,7 +46,8 @@ class Utils:
         # The term to insert into the OBO file later.
         term = ('\n[Term]\n'
                 'id: ID:%s\n'
-                'name: %s\n')
+                'name: %s\n'
+                'is_a: ID:%s ! %s\n')
 
         import obo
         # The words in all reddit files that does not exist in known words.
@@ -60,34 +61,23 @@ class Utils:
         # Also used to open file for writing later.
         known_words_file = Config.DATA_FOLER + 'known_words.txt'
 
-        # Read known words to reduce size later.
-        known_words = ''
-        with open(known_words_file, 'r') as f:
-            known_words += f.read()
+        for word in unknown_words:
+            if word not in known_concepts:
+                concepts = raw_input(
+                    'Select concept for %s from:\n    %s or "skip"\n'
+                    % (word, ', '.join(known_concepts[2:18])))
 
-        # Add each word to the OBO file for the related concept.
-        with open(Config.ONTOLOGY, 'a') as f:
-            for word in unknown_words:
-                if word not in known_concepts or \
-                        word not in known_words.split():
-
-                    concepts = raw_input(
-                        'Select a concept for %s from:\n%s or "skip"\n'
-                        % (word, ', '.join(known_concepts[2:18])))
-
-                    if 'skip' not in concepts:
-                        concepts = [i.strip() for i in concepts.split(',')]
-                        last_id += 1
-                        f.write(term % (last_id, word))
-                        for concept in concepts:  # Add relationship(s).
-                            is_a_id = self.__get_concept_id(
-                                obo_content, concept)
-                            f.write(('is_a: ID:%s ! %s\n') % (is_a_id, concept))
-                    else:
-                        with open(known_words_file, 'a') as kwf:
-                            kwf.write(word + '\n')
+                if 'skip' not in concepts:
+                    for concept in [i.strip() for i in concepts.split(',')]:
+                        with open(Config.ONTOLOGY, 'a') as f:
+                            last_id += 1
+                            pid = self.__get_concept_id(obo_content, concept)
+                            f.write(term % (last_id, word, pid, concept))
                 else:
-                    print ('%s exists in ontology or known words file.' % word)
+                    with open(known_words_file, 'a') as kwf:
+                        kwf.write(word + '\n')
+            else:
+                print ('%s exists in ontology or known words file.' % word)
 
     def populate_db_from_obo_file(self):
         '''
