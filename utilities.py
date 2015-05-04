@@ -140,7 +140,7 @@ class Utils:
                 data += content.read()
 
         data = data.replace('-', ' ')  # Markdown URLs
-        data = re.sub(r'[^a-zA-Z&^\s]', '', data)  # Spaces left untouched.
+        data = re.sub(r'[^a-zA-Z]', ' ', data)  # Spaces left untouched.
         # Convert data string to list to parse by word.
         # Convert to lower-case to prevent Issues/issues when comparing words.
         # Remove long words as they are reddit waffle.
