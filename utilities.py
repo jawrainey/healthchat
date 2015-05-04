@@ -85,11 +85,10 @@ class Utils:
                 transitive closure RDBMS representation for querying of system.
         '''
         import obo
-        from app import db
         # Note: structure.obo MUST contain the initial concepts.
         obo_content = [i for i in obo.Parser(Config.ONTOLOGY)]
 
-        from app import models
+        from app import models, db
         known_ids = [tup[0] for tup in db.session.query(models.Nodes.id).all()]
 
         for i in obo_content:
