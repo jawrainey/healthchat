@@ -87,7 +87,7 @@ is_a: ID:15 ! cardio
 id: ID:18
 name: cycling
 is_a: ID:15 ! cardio
-
+! AFTER HERE IS FIRST REDDIT DATA
 [Term]
 id: ID:19
 name: ale
@@ -1802,3 +1802,219 @@ is_a: ID:16 ! swimming
 id: ID:408
 name: weightlifter
 is_a: ID:14 ! weight-lifting
+! AFTER HERE IS SECOND REDDIT DATA
+
+[Term]
+id: ID:409
+name: eggroll
+is_a: ID:4 ! dairy
+
+[Term]
+id: ID:410
+name: monkfish
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:411
+name: clover
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:412
+name: mackerel
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:413
+name: melons
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:414
+name: cardamon
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:415
+name: flatbread
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:416
+name: cutting
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:417
+name: inactivity
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:418
+name: breadstick
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:419
+name: twinkies
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:420
+name: sausage
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:421
+name: cantalope
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:422
+name: condition
+is_a: ID:14 ! weight-lifting
+
+[Term]
+id: ID:423
+name: pilates
+is_a: ID:15 ! cardio
+
+[Term]
+id: ID:424
+name: baguette
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:425
+name: rye
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:426
+name: wheaten
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:427
+name: challah
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:428
+name: croissant
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:429
+name: baguette
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:430
+name: hotdog
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:431
+name: doughnut
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:432
+name: grapefruit
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:433
+name: bellpepper
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:434
+name: apparatus
+is_a: ID:13 ! endurance
+
+[Term]
+id: ID:435
+name: peporoni
+is_a: ID:8 ! meat
+
+[Term]
+id: ID:436
+name: tumeric
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:437
+name: lingini
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:438
+name: rissoto
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:439
+name: scones
+is_a: ID:6 ! grains
+
+[Term]
+id: ID:440
+name: watermelon
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:441
+name: honeymelon
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:442
+name: cappuccino
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:443
+name: latte
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:444
+name: americano
+is_a: ID:3 ! beverages
+
+[Term]
+id: ID:445
+name: mackarel
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:446
+name: courgette
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:447
+name: ketchup
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:448
+name: szechuan
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:449
+name: lemongrass
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:450
+name: vinaigrette
+is_a: ID:11 ! spices
+
+[Term]
+id: ID:451
+name: fishcakes
+is_a: ID:9 ! seafood
