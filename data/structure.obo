@@ -2018,3 +2018,48 @@ is_a: ID:11 ! spices
 id: ID:451
 name: fishcakes
 is_a: ID:9 ! seafood
+
+[Term]
+id: ID:452
+name: pepino
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:453
+name: kolrabi
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:454
+name: tamarillo
+is_a: ID:10 ! vegetable
+
+[Term]
+id: ID:455
+name: barries
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:456
+name: cataloupe
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:457
+name: nectarine
+is_a: ID:5 ! fruit
+
+[Term]
+id: ID:458
+name: backlava
+is_a: ID:47 ! deserts
+
+[Term]
+id: ID:459
+name: sablefish
+is_a: ID:9 ! seafood
+
+[Term]
+id: ID:460
+name: satsuma
+is_a: ID:5 ! fruit
